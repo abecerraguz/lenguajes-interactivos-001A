@@ -7,13 +7,13 @@ Los operadores en JavaScript son símbolos que nos permiten realizar operaciones
 Los operadores aritméticos en JavaScript nos permiten realizar operaciones matemáticas básicas como suma, resta, multiplicación y división.
 
 ```javascript
-var x = 10;
-var y = 5;
+let x = 10;
+let y = 5;
 
-var suma = x + y; // Suma
-var resta = x - y; // Resta
-var multiplicacion = x * y; // Multiplicación
-var division = x / y; // División
+let suma = x + y; // Suma
+let resta = x - y; // Resta
+let multiplicacion = x * y; // Multiplicación
+let division = x / y; // División
 
 console.log(suma); // salida: 15
 console.log(resta); // salida: 5
@@ -23,10 +23,10 @@ console.log(division); // salida: 2
 
 ## Operadores de asignación
 
-Los operadores de asignación en JavaScript nos permiten asignar un valor a una variable.
+Los operadores de asignación en JavaScript nos permiten asignar un valor a una letiable.
 
 ```javascript
-var x = 10;
+let x = 10;
 
 x += 5; // Equivalente a x = x + 5
 console.log(x); // salida: 15
@@ -56,8 +56,8 @@ Los operadores de comparación en JavaScript nos permiten comparar dos valores y
 | `<=`     | Compara si el primer valor es menor o igual que el segundo valor.                          |
 
 ```javascript
-var x = 10;
-var y = 5;
+let x = 10;
+let y = 5;
 
 console.log(x > y); // salida: true
 console.log(x < y); // salida: false
@@ -90,8 +90,8 @@ Es importante tener en cuenta que el operador de igualdad estricta evalúa tambi
 Los operadores lógicos en JavaScript nos permiten combinar expresiones booleanas y devolver un valor booleano (`true` o `false`) que indica si la combinación es verdadera o falsa.
 
 ```javascript
-var x = 10;
-var y = 5;
+let x = 10;
+let y = 5;
 
 console.log(x > 5 && y < 10); // salida: true
 console.log(x > 5 || y > 10); // salida: true
@@ -100,34 +100,34 @@ console.log(!(x > y)); // salida: false
 
 ## Operador ternario
 
-El operador ternario en JavaScript nos permite realizar una evaluación condicional y asignar un valor a una variable según el resultado de la evaluación.
+El operador ternario en JavaScript nos permite realizar una evaluación condicional y asignar un valor a una letiable según el resultado de la evaluación.
 
 ```javascript
-var edad = 20;
-var esMayorDeEdad = edad >= 18 ? "Sí" : "No";
+let edad = 20;
+let esMayorDeEdad = edad >= 18 ? "Sí" : "No";
 
 console.log(esMayorDeEdad); // salida: "Sí"
 ```
 
-En este ejemplo, la variable `esMayorDeEdad` se asigna con el valor "Sí" si la `edad` es mayor o igual a 18, y con el valor "No" en caso contrario.
+En este ejemplo, la letiable `esMayorDeEdad` se asigna con el valor "Sí" si la `edad` es mayor o igual a 18, y con el valor "No" en caso contrario.
 
 ## Buenas prácticas
 
 - Evita utilizar el operador de igualdad estricta (`===`) para comparar valores nulos o indefinidos. En estos casos, es mejor utilizar el operador de igualdad (`==`).
 - Evitar el uso de operadores de igualdad débil (`==`) y desigualdad débil (`!=`) ya que pueden provocar resultados inesperados debido a la coerción automática de tipos de datos. En su lugar, se recomienda utilizar los operadores de igualdad estricta (`===`) y desigualdad estricta (`!==`) que comparan tanto el valor como el tipo de dato.
 - Utilizar operadores bit a bit solo cuando sea necesario, ya que pueden hacer que el código sea difícil de entender. En su lugar, usar los operadores lógicos (`&&`, `||`) y los operadores de comparación (`===`, `!==`) cuando sea posible.
-- Evitar el uso de operadores de incremento (`++`) y decremento (`--`), ya que pueden hacer que el código sea difícil de entender y llevar a errores sutiles. En su lugar, utilizar operaciones aritméticas simples.
+- Evitar el uso de operadores de incremento (`++`) y decremento (`--`), ya que pueden hacer que el código sea difícil de entender y llelet a errores sutiles. En su lugar, utilizar operaciones aritméticas simples.
 - Ser conscientes de la precedencia y la asociatividad de los operadores. Si no estamos seguros de cómo se evaluará una expresión, utilizar paréntesis para asegurarnos de que se evalúe de la manera que queremos.
 - Utilizar operadores lógicos cortocircuitados (`&&` y `||`) en lugar de los operadores ternarios cuando sea posible. Por ejemplo, en lugar de escribir:
 
 ```javascript
-var resultado = (condicion) ? valor1 : valor2;
+let resultado = (condicion) ? valor1 : valor2;
 ```
 
 Podemos escribir:
 
 ```javascript
-var resultado = condicion && valor1 || valor2;
+let resultado = condicion && valor1 || valor2;
 ```
 
 Esto hace que el código sea más conciso y legible.

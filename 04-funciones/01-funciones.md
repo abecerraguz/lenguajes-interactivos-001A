@@ -1,6 +1,6 @@
 # Funciones en JavaScript
 
-Las funciones son bloques de código reutilizable que se pueden llamar en cualquier momento durante la ejecución del programa. En JavaScript, puedes definir funciones de varias maneras, pero la más común es utilizando la palabra clave `function`.
+Las funciones son bloques de código reutilizable que se pueden llamar en cualquier momento durante la ejecución del programa. En JavaScript, puedes definir funciones de letias maneras, pero la más común es utilizando la palabra clave `function`.
 
 ```javascript
 // Función que imprime un mensaje en la consola
@@ -28,7 +28,7 @@ En este ejemplo, hemos definido una función llamada `saludar` que acepta un par
 
 ## Parámetros y argumentos
 
-Una función puede recibir cero o más parámetros. Los parámetros son variables que se utilizan dentro de la función para realizar algún tipo de operación.
+Una función puede recibir cero o más parámetros. Los parámetros son letiables que se utilizan dentro de la función para realizar algún tipo de operación.
 
 ```javascript
 // Definición de una función con dos parámetros
@@ -45,7 +45,7 @@ La función `saludar` definida en el ejemplo es una función que acepta dos par�
 ```javascript
 // Definición de una función con dos parámetros
 function sumar(a, b) {
-  var resultado = a + b;
+  let resultado = a + b;
   console.log("El resultado de la suma es: " + resultado);
 }
 
@@ -57,7 +57,7 @@ En este ejemplo, hemos definido una función llamada `sumar` que acepta dos par�
 
 ## Retorno de valores
 
-Una función puede devolver un valor utilizando la palabra clave `return`. Cuando una función devuelve un valor, se puede asignar a una variable o utilizar como parte de una expresión.
+Una función puede devolver un valor utilizando la palabra clave `return`. Cuando una función devuelve un valor, se puede asignar a una letiable o utilizar como parte de una expresión.
 
 ```javascript
 // Definición de una función que devuelve un valor
@@ -66,7 +66,7 @@ function sumar(a, b) {
 }
 
 // Llamada a la función
-var resultado = sumar(5, 7);
+let resultado = sumar(5, 7);
 console.log("El resultado de la suma es: " + resultado); // El resultado de la suma es: 12
 ```
 
@@ -90,12 +90,12 @@ function multiplicar(a, b) {
   return a * b;
 }
 
-// Llamada a la función y asignación del valor de retorno a una variable
-var resultado = multiplicar(3, 4);
+// Llamada a la función y asignación del valor de retorno a una letiable
+let resultado = multiplicar(3, 4);
 console.log("El resultado de la multiplicación es: " + resultado); // El resultado de la multiplicación es: 12
 ```
 
-En este ejemplo, hemos definido una función llamada `multiplicar` que acepta dos parámetros `a` y `b`. Cuando se llama a la función, los valores de `a` y `b` se multiplican y se devuelve el resultado. Luego, el valor de retorno se asigna a una variable llamada `resultado` y se muestra en la consola.
+En este ejemplo, hemos definido una función llamada `multiplicar` que acepta dos parámetros `a` y `b`. Cuando se llama a la función, los valores de `a` y `b` se multiplican y se devuelve el resultado. Luego, el valor de retorno se asigna a una letiable llamada `resultado` y se muestra en la consola.
 
 ## Funciones anónimas
 
