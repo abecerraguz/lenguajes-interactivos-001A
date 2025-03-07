@@ -876,6 +876,25 @@ También revisaste algunos elementos fundamentales en la mayoría de los lenguaj
 
 Ahora, ¡a practicar! 🚀
 
+# Ejercicios
+1. `Contraseña válida`
+  Escribir una función llamada contrasenaValida que reciba un string y retorne true si el string es igual a "2Fj(jjbFsuj" o "eoZiugBf&g9". De lo contrario debe retornar false.
+
+2. `Calcular impuestos`
+Escribir una función llamada calcularImpuestos que reciba dos argumentos numéricos: edad e ingresos. Si edad es igual o mayor a 18 y los ingresos son iguales o mayores a 1000 debe retornar ingresos * 40%. De lo contrario debe retornar 0.
+
+3. `IMC (ïndice de masa corporal)`
+
+El índice de masa corporal (IMC), o BMI por sus siglas en inglés, es un valor que determina la cantidad de grasa de una persona.
+
+El BMI se calcula con la siguiente formula: peso / altura^2 (Altura al cuadrado)
+
+Escribir una función llamada bmi que reciba dos argumentos: peso y altura, y retorne un string con las siguientes posibilidades:
+
+"Bajo de peso" si el BMI < 18.5
+"Normal" si está entre 18.5 y 24.9
+"Sobrepeso" si está entre 25 y 29.9
+"Obeso" si es igual o mayor a 30
 
 # Evalúa tus conocimientos
 [Test semana 1](https://docs.google.com/forms/d/e/1FAIpQLSeyVFmriGJgh3KclBRfFP9XP_Is2sJqEs6jrBqKcYREtW00gQ/viewform?usp=sharing)
