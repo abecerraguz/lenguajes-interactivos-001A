@@ -877,6 +877,9 @@ También revisaste algunos elementos fundamentales en la mayoría de los lenguaj
 Ahora, ¡a practicar! 🚀
 
 
+# Evalúa tus conocimientos
+[Test semana 1](https://docs.google.com/forms/d/e/1FAIpQLSeyVFmriGJgh3KclBRfFP9XP_Is2sJqEs6jrBqKcYREtW00gQ/viewform?usp=sharing)
+
 
 
 
