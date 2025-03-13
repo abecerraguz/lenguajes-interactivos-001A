@@ -1385,6 +1385,9 @@ Utiliza métodos de arreglos (map y filter) para convertir un arreglo de nombres
 ### Ejercicio 3: Transformar y filtrar nombres
 Crea un arreglo de objetos donde cada objeto represente a un estudiante con su nombre y nota. Luego, implementa una función que recorra el arreglo (usando un ciclo) para calcular el promedio de las notas. Además, se muestra cómo hacerlo usando el método reduce.
 
+# Evalúa tus conocimientos
+[Test semana 2](https://docs.google.com/forms/d/e/1FAIpQLSdnJDLPlG2Hnmpg3wTNk-hZUQMpwQ2a9x4D8UIbVPPgpOtUxw/viewform?usp=sharing)
+
 
 
 
