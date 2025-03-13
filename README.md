@@ -901,6 +901,490 @@ Escribir una función llamada bmi que reciba dos argumentos: peso y altura, y re
 
 
 
+# Semana 2: Profundizando en el control de Javascript
+
+## Arrays
+
+Un array en JavaScript es una estructura de datos que se utiliza para almacenar una colección de elementos, como números, cadenas de texto u objetos. Los elementos de un array están indexados numéricamente, comenzando desde cero. Es decir, el primer elemento se encuentra en la posición 0, el segundo en la posición 1, y así sucesivamente.
+
+Para crear un array en JavaScript, se puede utilizar la siguiente sintaxis:
+
+```javascript
+var miArray = []; // Crea un array vacío
+```
+
+O bien:
+
+```javascript
+var miArray = new Array(); // Crea un array vacío
+```
+
+Para crear un array con elementos, se puede utilizar la siguiente sintaxis:
+
+```javascript
+var miArray = [1, 'Hola', [3], true]; // Crea un array con tres elementos
+```
+
+O bien:
+
+```javascript
+var miArray = new Array(1, 2, 3); // Crea un array con tres elementos
+```
+
+Es posible usar las palabras reservadas `var`, `let` o `const` para declarar un array. Por ejemplo:
+
+```javascript
+var miArray = [1, 2, 3]; // Crea un array con tres elementos
+let miArray = [1, 2, 3]; // Crea un array con tres elementos
+const miArray = [1, 2, 3]; // Crea un array con tres elementos
+```
+
+Para acceder a un elemento de un array, se puede utilizar la siguiente sintaxis:
+
+```javascript
+var miArray = [1, 2, 3]; // Crea un array con tres elementos
+console.log(miArray[0]); // Muestra el primer elemento del array en la consola
+```
+
+Para modificar un elemento de un array, se puede utilizar la siguiente sintaxis:
+
+```javascript
+var miArray = [1, 2, 3]; // Crea un array con tres elementos
+miArray[0] = 4; // Modifica el primer elemento del array
+console.log(miArray[0]); // Muestra el primer elemento del array en la consola
+```
+
+## Buenas prácticas
+
+- Utilizar `const` en lugar de `let` para declarar arrays que no serán modificados. De esta manera, se evita que el array sea reasignado accidentalmente y se hace más claro que el array no será modificado.
+- Evitar la mutación directa de los elementos del array, especialmente cuando se trata de arrays anidados. En su lugar, utilizar métodos de array que no mutan el array original, como `map()`, `filter()`, `reduce()`, etc.
+- Evitar el uso de bucles `for` para recorrer arrays. En su lugar, utilizar métodos de array como `forEach()`, `map()`, `filter()`, `reduce()`, etc. Estos métodos son más legibles y menos propensos a errores.
+- Utilizar nombres descriptivos y legibles para los arrays y las variables que contienen arrays. Esto hace que el código sea más fácil de entender y depurar.
+- Utilizar el método `Array.isArray()` para verificar si un valor es un array. Esto es más seguro que utilizar la comprobación de tipo `typeof`.
+- Ser consciente de las operaciones costosas en términos de rendimiento en los arrays, como la reordenación y la eliminación de elementos. En su lugar, utilizar operaciones que sean más eficientes, como el método `splice()`.
+
+Siguiendo estas buenas prácticas con los arrays en JavaScript, podemos escribir código más legible, eficiente y menos propenso a errores sutiles.
+
+# Agregar y eliminar datos de un arreglo
+
+En JavaScript, un arreglo es una estructura de datos que nos permite almacenar una colección de elementos en una sola variable. Una vez que hemos creado un arreglo, podemos agregar nuevos elementos, eliminar elementos existentes y modificar elementos ya existentes en el arreglo.
+
+## Agregar elementos a un arreglo
+
+Hay varias formas de agregar elementos a un arreglo en JavaScript:
+
+### Método push()
+
+El método `push()` nos permite agregar uno o más elementos al final de un arreglo. El método devuelve la nueva longitud del arreglo.
+
+```javascript
+// Definición de un arreglo
+let miArreglo = ['manzana', 'banana', 'cereza'];
+miArreglo.push('durazno');
+console.log(miArreglo); // ['manzana', 'banana', 'cereza', 'durazno']
+```
+
+También podemos agregar varios elementos a la vez utilizando el método `push()`:
+
+```javascript
+let miArreglo = ['manzana', 'banana', 'cereza'];
+miArreglo.push('durazno', 'fresa', 'uva');
+console.log(miArreglo); // ['manzana', 'banana', 'cereza', 'durazno', 'fresa', 'uva']
+```
+
+### Método unshift()
+
+El método `unshift()` nos permite agregar uno o más elementos al inicio de un arreglo. El método devuelve la nueva longitud del arreglo.
+
+```javascript
+let miArreglo = ['manzana', 'banana', 'cereza'];
+miArreglo.unshift('durazno');
+console.log(miArreglo); // ['durazno', 'manzana', 'banana', 'cereza']
+```
+
+También podemos agregar varios elementos a la vez utilizando el método `unshift()`:
+
+```javascript
+let miArreglo = ['manzana', 'banana', 'cereza'];
+miArreglo.unshift('durazno', 'fresa', 'uva');
+console.log(miArreglo); // ['durazno', 'fresa', 'uva', 'manzana', 'banana', 'cereza']
+```
+
+### Operador spread (ES6)
+
+El operador spread `...` nos permite agregar elementos de otro arreglo al final de nuestro arreglo actual:
+
+```javascript
+let miArreglo = ['manzana', 'banana', 'cereza'];
+let otrosFrutos = ['durazno', 'fresa', 'uva'];
+miArreglo = [...miArreglo, ...otrosFrutos];
+console.log(miArreglo); // ['manzana', 'banana', 'cereza', 'durazno', 'fresa', 'uva']
+```
+
+### Agregar con el método splice()
+
+El método `splice()` nos permite agregar elementos a un array en cualquier posición. Para hacerlo, debemos indicar la posición en la que queremos agregar los elementos, la cantidad de elementos que queremos eliminar (en este caso 0, ya que no queremos eliminar nada) y los elementos que queremos agregar.
+
+```javascript
+let numeros = [1, 2, 3, 4, 5];
+numeros.splice(2, 0, 6, 7);
+console.log(numeros); // [1, 2, 6, 7, 3, 4, 5]
+```
+
+En este ejemplo, hemos agregado los números 6 y 7 en la posición 2 del array numeros. Como segundo argumento, pasamos el valor 0 ya que no queremos eliminar ningún elemento.
+
+## Eliminar elementos de un arreglo
+
+Hay varias formas de eliminar elementos de un arreglo en JavaScript:
+
+### Método pop()
+
+El método `pop()` nos permite eliminar el último elemento de un arreglo. El método devuelve el elemento eliminado.
+
+```javascript
+let miArreglo = ['manzana', 'banana', 'cereza'];
+let frutaEliminada = miArreglo.pop();
+console.log(miArreglo); // ['manzana', 'banana']
+console.log(frutaEliminada); // 'cereza'
+```
+
+### Método shift()
+
+El método `shift()` nos permite eliminar el primer elemento de un arreglo. El método devuelve el elemento eliminado.
+
+```javascript
+let miArreglo = ['manzana', 'banana', 'cereza'];
+let frutaEliminada = miArreglo.shift();
+console.log(miArreglo); // ['banana', 'cereza']
+console.log(frutaEliminada); // 'manzana'
+```
+
+## Eliminar con el método splice()
+
+El método `splice()` también nos permite eliminar elementos de un array. Para hacerlo, debemos indicar la posición inicial de los elementos a eliminar y la cantidad de elementos a eliminar.
+
+```javascript
+let numeros = [1, 2, 3, 4, 5];
+numeros.splice(2, 2);
+console.log(numeros); // [1, 2, 5]
+```
+
+En este ejemplo, hemos eliminado los elementos en las posiciones 2 y 3 del array numeros (el número 3 y 4), ya que hemos indicado que queremos eliminar 2 elementos a partir de la posición 2.
+
+También podemos guardar los elementos eliminados en una variable:
+
+```javascript
+let numeros = [1, 2, 3, 4, 5];
+let numerosEliminados = numeros.splice(2, 2);
+console.log(numeros); // [1, 2, 5]
+console.log(numerosEliminados); // [3, 4]
+```
+
+En este caso, hemos eliminado los elementos en las posiciones 2 y 3 del array `numeros` y los hemos guardado en la variable `numerosEliminados`.
+
+## Buenas prácticas
+
+- Utilizar métodos de array que no mutan el array original, como `concat()`, `slice()`, `map()`, `filter()`, `reduce()`, etc. Esto es especialmente importante si se está trabajando con un array que no se debe modificar directamente.
+- Utilizar el método `push()` para agregar elementos al final del array. Este método es más eficiente que utilizar la asignación de índice (`array[i] = value`) para agregar elementos al final.
+- Utilizar el método `unshift()` para agregar elementos al inicio del array. Este método es más eficiente que utilizar la asignación de índice (`array[i] = value`) para agregar elementos al inicio.
+- Utilizar el método `pop()` para eliminar el último elemento del array. Este método es más eficiente que utilizar la asignación de índice (`delete array[i]`) para eliminar el último elemento.
+- Utilizar el método `shift()` para eliminar el primer elemento del array. Este método es más eficiente que utilizar la asignación de índice (`delete array[0]`) para eliminar el primer elemento.
+- Evitar la eliminación de elementos del medio del array, ya que esto puede provocar la reorganización del resto de los elementos y afectar el rendimiento. En su lugar, utilizar el método `splice()` para eliminar elementos del medio del array.
+- Ser cuidadoso al utilizar métodos de array que modifican el array original, como `sort()`, `reverse()`, `splice()`, etc. Asegurarse de que la mutación del array sea necesaria y de que se comprenda completamente su impacto.
+
+Siguiendo estas buenas prácticas al agregar y eliminar elementos de un array en JavaScript, podemos escribir código más legible, eficiente y menos propenso a errores sutiles.
+
+# Iterando arreglos en JavaScript
+
+Iterando arreglos en JavaScript
+En JavaScript, es muy común trabajar con arreglos y recorrerlos para realizar alguna tarea específica, como mostrar su contenido en la pantalla, realizar cálculos, filtrar elementos, etc.
+
+Para iterar un arreglo en JavaScript, podemos usar varios métodos, como `for`, `for...of`, `forEach`, `map`, `filter`, `reduce`, etc. En este tutorial, veremos algunos ejemplos de cómo utilizar estos métodos.
+
+## Iterando un arreglo con `for`
+
+El método `for` es el más básico y común para iterar un arreglo en JavaScript. La sintaxis es la siguiente:
+
+```javascript
+for (var i = 0; i < arreglo.length; i++) {
+  // código a ejecutar en cada iteración
+}
+```
+
+Aquí, `i` es el índice del arreglo que se va a iterar, `arreglo.length` es la cantidad de elementos del arreglo, y `código a ejecutar en cada iteración` es el bloque de código que se ejecutará en cada vuelta del ciclo.
+
+Por ejemplo, supongamos que tenemos un arreglo de números y queremos sumarlos todos. Podemos utilizar el método `for` de la siguiente manera:
+
+```javascript
+var numeros = [1, 2, 3, 4, 5];
+var suma = 0;
+
+for (var i = 0; i < numeros.length; i++) {
+  suma += numeros[i];
+}
+
+console.log("La suma de los números es:", suma);
+```
+
+En este ejemplo, el ciclo itera el arreglo numeros y va sumando cada uno de los elementos. La variable suma guarda el resultado final, que se muestra en la consola con console.log().
+
+## Iterando un arreglo con `for...of`
+
+El método `for...of` es una forma más moderna y sencilla de iterar un arreglo en JavaScript. La sintaxis es la siguiente:
+
+```javascript
+for (var elemento of arreglo) {
+  // código a ejecutar en cada iteración
+}
+```
+
+Aquí, `elemento` es el valor de cada elemento del arreglo, y `código a ejecutar en cada iteración` es el bloque de código que se ejecutará en cada vuelta del ciclo.
+
+Por ejemplo, supongamos que queremos mostrar en la consola todos los nombres de un arreglo. Podemos utilizar el método `for...of` de la siguiente manera:
+
+```javascript
+var nombres = ["Juan", "María", "Pedro", "Ana"];
+
+for (var nombre of nombres) {
+  console.log(nombre);
+}
+```
+
+En este ejemplo, el ciclo itera el arreglo nombres y muestra cada uno de los elementos en la consola con console.log().
+
+## Iterando un arreglo con `forEach`
+
+El método `forEach` es otro método común para iterar un arreglo en JavaScript. La sintaxis es la siguiente:
+
+```javascript
+arreglo.forEach(function(elemento, indice) {
+  // código a ejecutar en cada iteración
+});
+```
+
+Aquí, `elemento` es el valor de cada elemento del arreglo, `indice` es el índice de cada elemento, y `código a ejecutar en cada iteración` es el bloque de código que se ejecutará en cada vuelta del ciclo.
+
+Por ejemplo, supongamos que queremos mostrar en la consola todos los nombres de un arreglo, junto con su índice. Podemos utilizar el método `forEach` de la siguiente manera:
+
+```javascript
+var nombres = ["Juan", "María", "Pedro", "Ana"];
+
+nombres.forEach(function(nombre, indice) {
+  console.log(indice, nombre);
+});
+```
+
+En este ejemplo, el ciclo itera el arreglo nombres y muestra cada uno de los elementos en la consola con console.log().
+
+## Iterando un arreglo con `map`
+
+El método `map()` es similar al método `forEach()`, pero en lugar de realizar una acción en cada elemento del arreglo, el método `map()` crea un nuevo arreglo con los resultados de aplicar una función a cada elemento del arreglo original.
+
+La sintaxis del método `map()` es la siguiente:
+
+```javascript
+var nuevoArreglo = array.map(function(elemento) {
+  // Función que devuelve un nuevo valor para el elemento
+});
+```
+
+Este método llama a la función especificada para cada elemento del arreglo `array`. La función especificada debe tomar un parámetro, que representa el valor actual del elemento del arreglo, y debe devolver un nuevo valor para ese elemento.
+
+Por ejemplo, si queremos crear un nuevo arreglo `dobleNumeros` que contenga los valores del arreglo `numeros` multiplicados por dos, podemos hacer lo siguiente:
+
+```javascript
+var numeros = [1, 2, 3, 4, 5];
+
+var dobleNumeros = numeros.map(function(numero) {
+  return numero * 2;
+});
+
+console.log(dobleNumeros); // [2, 4, 6, 8, 10]
+```
+
+En este ejemplo, el método `map()` llama a la función especificada para cada elemento del arreglo `numeros`. La función especificada multiplica el valor del elemento por dos y devuelve el resultado.
+
+## Iterando un arreglo con `filter`
+
+El método `filter()` crea un nuevo arreglo con todos los elementos que cumplan con la condición implementada por la función dada.
+
+La sintaxis del método `filter()` es la siguiente:
+
+```javascript
+var nuevoArreglo = array.filter(function(elemento) {
+  // Función que devuelve true o false
+});
+```
+
+Este método llama a la función especificada para cada elemento del arreglo `array`. La función especificada debe tomar un parámetro, que representa el valor actual del elemento del arreglo, y debe devolver un valor booleano que indica si el elemento debe incluirse en el nuevo arreglo.
+
+Por ejemplo, si queremos crear un nuevo arreglo `pares` que contenga solo los números pares del arreglo `numeros`, podemos hacer lo siguiente:
+
+```javascript
+var numeros = [1, 2, 3, 4, 5];
+
+var pares = numeros.filter(function(numero) {
+  return numero % 2 === 0;
+});
+
+console.log(pares); // [2, 4]
+```
+
+En este ejemplo, el método `filter()` llama a la función especificada para cada elemento del arreglo `numeros`. La función especificada verifica si el valor del elemento es par, y devuelve true o false según corresponda.
+
+## Iterando un arreglo con `find`
+
+El método `find()` devuelve el primer elemento del arreglo que cumpla con la condición implementada por la función dada.
+
+La sintaxis del método `find()` es la siguiente:
+
+```javascript
+var elemento = array.find(function(elemento) {
+  // Función que devuelve true o false
+});
+```
+
+Este método llama a la función especificada para cada elemento del arreglo `array`. La función especificada debe tomar un parámetro, que representa el valor actual del elemento del arreglo, y debe devolver un valor booleano que indica si el elemento cumple con la condición.
+
+Por ejemplo, si queremos encontrar el primer número par del arreglo `numeros`, podemos hacer lo siguiente:
+
+```javascript
+var numeros = [1, 2, 3, 4, 5];
+
+var primerPar = numeros.find(function(numero) {
+  return numero % 2 === 0;
+});
+
+console.log(primerPar); // 2
+```
+
+En este ejemplo, el método `find()` llama a la función especificada para cada elemento del arreglo `numeros`. La función especificada verifica si el valor del elemento es par, y devuelve true o false según corresponda.
+
+## Iterando un arreglo con `reduce`
+
+El método `reduce()` aplica una función a un acumulador y a cada valor de un arreglo (de izquierda a derecha) para reducirlo a un único valor.
+
+La sintaxis del método `reduce()` es la siguiente:
+
+```javascript
+var valorFinal = array.reduce(function(acumulador, elemento) {
+  // Función que devuelve el nuevo valor del acumulador
+}, valorInicial);
+```
+
+Este método llama a la función especificada para cada elemento del arreglo `array`. La función especificada debe tomar dos parámetros, que representan el valor actual del acumulador y el valor actual del elemento del arreglo, y debe devolver el nuevo valor del acumulador.
+
+Por ejemplo, si queremos sumar todos los números del arreglo `numeros`, podemos hacer lo siguiente:
+
+```javascript
+var numeros = [1, 2, 3, 4, 5];
+
+var suma = numeros.reduce(function(acumulador, numero) {
+  return acumulador + numero;
+}, 0);
+
+console.log(suma); // 15
+```
+
+En este ejemplo, el método `reduce()` llama a la función especificada para cada elemento del arreglo `numeros`. La función especificada suma el valor del elemento al valor del acumulador, y devuelve el nuevo valor del acumulador.
+
+## Iterando un arreglo con `every`
+
+El método `every()` comprueba si todos los elementos del arreglo cumplen con la condición implementada por la función dada.
+
+La sintaxis del método `every()` es la siguiente:
+
+```javascript
+var resultado = array.every(function(elemento) {
+  // Función que devuelve true o false
+});
+```
+
+Este método llama a la función especificada para cada elemento del arreglo `array`. La función especificada debe tomar un parámetro, que representa el valor actual del elemento del arreglo, y debe devolver un valor booleano que indica si el elemento cumple con la condición.
+
+Por ejemplo, si queremos verificar si todos los números del arreglo `numeros` son pares, podemos hacer lo siguiente:
+
+```javascript
+var numeros = [2, 4, 6, 8, 10];
+
+var todosPares = numeros.every(function(numero) {
+  return numero % 2 === 0;
+});
+
+console.log(todosPares); // true
+```
+
+En este ejemplo, el método `every()` llama a la función especificada para cada elemento del arreglo `numeros`. La función especificada verifica si el valor del elemento es par, y devuelve true o false según corresponda.
+
+## Iterando un arreglo con `some`
+
+El método `some()` comprueba si al menos un elemento del arreglo cumple con la condición implementada por la función dada.
+
+La sintaxis del método `some()` es la siguiente:
+
+```javascript
+var resultado = array.some(function(elemento) {
+  // Función que devuelve true o false
+});
+```
+
+Este método llama a la función especificada para cada elemento del arreglo `array`. La función especificada debe tomar un parámetro, que representa el valor actual del elemento del arreglo, y debe devolver un valor booleano que indica si el elemento cumple con la condición.
+
+Por ejemplo, si queremos verificar si al menos un número del arreglo `numeros` es par, podemos hacer lo siguiente:
+
+```javascript
+var numeros = [1, 3, 5, 7, 9];
+
+var algunPar = numeros.some(function(numero) {
+  return numero % 2 === 0;
+});
+
+console.log(algunPar); // false
+```
+
+En este ejemplo, el método `some()` llama a la función especificada para cada elemento del arreglo `numeros`. La función especificada verifica si el valor del elemento es par, y devuelve true o false según corresponda.
+
+En conclusión, los métodos `map()`, `filter()`, `find()`, `reduce()`, `every()`, `some()` son muy útiles para iterar un arreglo y realizar operaciones sobre sus elementos. Si bien no son los únicos métodos que nos permiten iterar un arreglo, son los métodos más utilizados.
+
+
+## Buenas prácticas
+
+- Utilizar métodos de array como `forEach()`, `map()`, `filter()`, `reduce()`, etc. en lugar de bucles `for`. Estos métodos son más legibles y menos propensos a errores.
+- Ser cuidadoso al utilizar la indexación de array (`array[i]`) dentro de un bucle. Asegurarse de que el índice sea válido y de que no se produzca un desbordamiento o subdesbordamiento.
+- Utilizar nombres descriptivos y legibles para las variables del bucle y para los elementos del array. Esto hace que el código sea más fácil de entender y depurar.
+- Utilizar el método `Array.isArray()` para verificar si un valor es un array antes de iterar sobre él. Esto es más seguro que utilizar la comprobación de tipo `typeof`.
+- Utilizar la sintaxis de desestructuración para acceder a los elementos de un array en lugar de utilizar la indexación de array. Esto hace que el código sea más legible y menos propenso a errores.
+- Evitar la mutación directa de los elementos del array dentro del bucle, especialmente cuando se trata de arrays anidados. En su lugar, utilizar métodos de array que no mutan el array original, como `map()`, `filter()`, `reduce()`, etc.
+- Utilizar la declaración de const en lugar de let para declarar la variable del bucle si no se va a modificar dentro del bucle.
+
+Siguiendo estas buenas prácticas al iterar con arrays en JavaScript, podemos escribir código más legible, eficiente y menos propenso a errores sutiles.
+
+# Cierre de la semana
+En este recorrido, aprendiste cómo:
+
+   - Variables, arrays, operadores `(if - else)` y bucles, para dar
+   solución a los requerimientos del proyecto.
+   - Asimismo, descubriste cómo utilizar
+   - Revisaste los bucles for y while, que son fundamentales para realizar tareas iterativas,
+   como recorrer matrices o realizar cálculos repetitivos.
+   - También aprendiste que el bucle `for...in` es útil para examinar y trabajar con las claves
+   y valores de un objeto de forma dinámica, permitiendo una iteración eficiente a través de todas las propiedades enumerables del objeto.
+
+Con estos aprendizajes, ahora podrás utilizarlas variables y arreglos para resolver problemas relacionados con operaciones numéricas básicas integrando todo lo aprendido hasta el momento y generar programas complejos con operaciones matemáticas clasificando sus resultados.
+
+Ahora, ¡a practicar! 🚀
+
+# Ejercicios
+
+### Ejercicio 1: Sumar números impares
+Crea una función que reciba un arreglo de números y retorne la suma de los números impares utilizando un ciclo for.
+
+### Ejercicio 2: Transformar y filtrar nombres
+Utiliza métodos de arreglos (map y filter) para convertir un arreglo de nombres a mayúsculas y filtrar aquellos que tengan más de 5 caracteres.
+
+### Ejercicio 3: Transformar y filtrar nombres
+Crea un arreglo de objetos donde cada objeto represente a un estudiante con su nombre y nota. Luego, implementa una función que recorra el arreglo (usando un ciclo) para calcular el promedio de las notas. Además, se muestra cómo hacerlo usando el método reduce.
+
 
 
 
