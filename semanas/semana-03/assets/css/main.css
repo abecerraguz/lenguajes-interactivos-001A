@@ -1,0 +1,231 @@
+/*SELECTOR UNIVERSAL */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/*----------------------------------ESTILOS GENERALES-----------------------*/
+body{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+p{
+    font-size: 1rem;
+    line-height: 140%;
+    font-weight: normal;
+}
+
+h1{
+    font-size: 37px;
+}
+h2{
+    font-size: 23px;
+}
+h3{
+    font-size: 20px;
+}
+.color-verde{
+    background-color: #008B8B;
+}
+.color-red-pastel{
+    color: #DB946A;
+}
+.fondo-red-pastel{
+    background-color: #DB946A;
+}
+.fondo-gris-oscuro{
+    background-color: #416363;
+}
+.color-gris-oscuro{
+    color: #416363;
+}
+.letra-verde{
+    color: #008B8B;
+}
+.imagen-marina{
+    max-width: 100%;
+    height: auto; 
+    display: block; 
+    margin: 0 auto;
+}
+.letra-blanca{
+    color: #fff;
+}
+.icono-blanco {
+    color: #fff;
+    font-size: 27px;
+}
+/*----------BOTÓN IMPRIMIR------*/
+.boton-imprimir {
+    background-color: #DB5C19 !important;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 50%; 
+    transition: transform 0.7s ease; 
+    width: 50px; 
+    height: 50px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0; 
+    border: none; 
+    font-size: 27px;
+}
+.boton-imprimir:hover {
+    transform: scale(1.2);
+}
+/*-----MODAL IMPRIMIR---*/
+.modal-footer {
+    border-top: none;
+}
+.b-confirmar{
+    background-color: #DB5C19 !important;
+    color: #fff;
+}
+.b-confirmar:hover{
+    transform: scale(1.03);
+}
+@media print{
+    body{
+        color: #000 !important;
+        background-color: #fff !important;
+    }
+    .desaparece{
+        display: none !important;
+    }
+    img {
+        filter: grayscale(100%);
+    }
+    h2{
+        color: #000 !important;
+    }
+    .spinner {        
+        border: 7px solid #000000 !important;
+        border-right-color: #6a6a6a !important;
+        color: #000000 !important;
+    }
+    .flecha{
+        border-left: 20px solid #000000 !important;
+    }
+    .letra-verde{
+        color: #000;
+    }
+}
+/*----------------------MI PERFIL--------------------- */
+.linea-abajo{
+    border-bottom: 4px solid black;
+    padding-bottom: 10px;
+}
+.spinner {        
+    border: 7px solid #008B8B;
+    border-right-color: #DB946A;
+    border-radius: 50%;
+    width: 110px;
+    height: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    color: #008B8B;
+    transition: transform 0.5s ease;
+}
+.spinner:hover {
+    transform: scale(1.07);
+    color: #DB5C19;
+
+}
+/*-----------------------EXPERIENCIA PROFESIONAL----------------------- */
+.rectangulo {
+    position: relative;
+    width: 90px;
+    height: 40px;
+    background-color: #008B8B;
+    color: white;
+    font-size: 19px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flecha {
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid #008B8B;
+}
+.borde-izquierdo {
+    border-left: 2px solid #691f1f;
+}
+.vertical-line {
+    border-left: 2px solid #000; 
+    height: 100%;
+}
+.line-col {
+    padding: 0 !important; 
+}
+/*-----------------------SOFTWARE E IDIOMAS----------------------- */
+.progress-bar {
+    background-color: #416363;
+}
+.altura-uno{
+    width: 100px;
+    height: 120px;
+    border-radius: 0;
+}
+.altura-dos{
+    width: 100px;
+    height: 90px;
+    border-radius: 0;
+}
+.altura-tres{
+    width: 100px;
+    height: 50px;
+    border-radius: 0;
+    background-color: #DB946A;
+}
+.badge {
+    transition: transform 0.5s ease;
+}
+.badge:hover {
+    transform: scale(1.1); 
+}
+
+
+.ventana {
+    width: 80%;
+    max-width: 600px;
+    height: 300px;
+    margin: 100px auto;
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    border-radius: 10px;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+ul{
+    list-style: none;
+}
+
+ul li:last-child .ventana {
+    max-width: 1200px;
+    height: auto;
+    overflow: hidden;
+    font-size: 1rem;
+    font-weight: normal;
+}

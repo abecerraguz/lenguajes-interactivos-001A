@@ -1390,6 +1390,251 @@ Crea un arreglo de objetos donde cada objeto represente a un estudiante con su n
 
 
 
+# Experiencia de aprendizaje 2: Aplicando JavaScript para intervenir los elementos del DOM
+# Semana 3: Interactuando con JavaScript y los navegadores
+El `BOM (Browser Object Model)` es un conjunto de objetos que permite interactuar con el navegador. No forma parte del estándar de JavaScript, pero es proporcionado por los navegadores para manipular la ventana, la URL, la navegación y más.
+
+Los principales objetos del BOM son:
+
+## 1. window (Objeto Principal)
+Es el objeto global en el navegador que representa la ventana del navegador. Todos los objetos del BOM son accesibles a través de window.
+
+```javascript
+
+   // Abre una nueva ventana
+   let nuevaVentana = window.open('https://www.google.com', '_blank');
+
+   // Cierra la ventana actual (solo si fue abierta con JS)
+   window.close();
+
+   // Muestra un cuadro de alerta
+   window.alert('¡Hola, esto es una alerta!');
+
+   // Muestra un cuadro de confirmación
+   let respuesta = window.confirm('¿Deseas continuar?');
+
+   // Muestra un cuadro de entrada
+   let nombre = window.prompt('¿Cuál es tu nombre?');
+
+   // Imprime la página
+   window.print();
+
+```
+
+```html
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Abrir ventana</title>
+   </head>
+   <body>
+      <div class="container">
+         <h1>Abrir ventana del objeto window</h1>
+         <hr>
+         <button class="btn" name="abrir" id="abrir" onClick="abrirventana()">Abrir</button>   
+         <button class="btn" name="cerrar" id="cerrar" onClick="cerrarVentana()">Cerrar</button> 
+   
+      </div>
+    
+         <script>
+            // Con funciones
+            let ventanaUno
+            function abrirventana(){
+               ventanaUno = window.open('https://www.duoc.cl/duoconline/', 'DUOC Online', 'status=no,resizable=yes, width=100,height=100')
+            }
+
+            function cerrarVentana(){
+               ventanaUno.close();
+            }
+
+
+         </script>
+   </body>
+   </html>
+
+
+```
+
+## 2. navigator (Información del Navegador)
+Proporciona información sobre el navegador y el sistema del usuario.
+
+### Propiedades y Métodos de navigator
+```javascript
+
+   console.log(navigator.userAgent);  // Información del navegador
+   console.log(navigator.language);   // Idioma del navegador
+   console.log(navigator.platform);   // Plataforma del sistema operativo
+   console.log(navigator.onLine);     // ¿El usuario está en línea?
+
+```
+## 3. screen (Información de la Pantalla)
+Permite acceder a las dimensiones de la pantalla del usuario.
+
+### Propiedades de screen
+```javascript
+
+   console.log(screen.width);  // Ancho de la pantalla
+   console.log(screen.height); // Alto de la pantalla
+   console.log(screen.availWidth);  // Ancho disponible (sin la barra de tareas)
+   console.log(screen.availHeight); // Alto disponible
+   console.log(screen.colorDepth);  // Profundidad de color en bits
+
+```
+## 4. location (Información de la URL)
+Proporciona información sobre la URL actual y permite redirigir a otra página.
+
+### Métodos y Propiedades de location
+```javascript
+
+         let ventanaUno
+
+         function abrirventana(){
+            ventanaUno = window.open('https://www.duoc.cl/duoconline/', 'DUOC Online', 'status=no,resizable=yes, width=400,height=600')
+         }
+
+         function cerrarVentana(){
+            ventanaUno.close();
+         }
+
+        function datosURL(){
+
+            let urlCompleta, urlProtocol, urlHost, urlRuta, urlConsulta, urlAnclaje;
+
+            urlCompleta = location.href; // Devuelve la URL COMPLETA
+            urlProtocol = location.protocol; // Devuelve el http:
+            urlHost = location.host; // Devuelve el host, http://127.0.0.1:5501
+            urlRuta = location.pathname; // Devuelve la ruta,  /semanas/semana-03/index.html
+            urlConsulta = location.search; // Devulve los parametros de consulta, Si la URL es "https://ejemplo.com?nombre=Juan&edad=25" , Resultado: "?nombre=Juan&edad=25"
+            urlAnclaje = location.hash; 
+
+            console.log('urlCompleta-->', urlCompleta );
+            console.log('urlProtocol-->', urlProtocol );
+            console.log('urlHost-->', urlHost );
+            console.log('urlRuta-->', urlRuta );
+            console.log('urlConsulta-->', urlConsulta );
+            console.log('urlAnclaje-->', urlAnclaje );
+
+        }
+
+        datosURL()
+
+
+```
+
+# 5. history (Historial de Navegación)
+Permite interactuar con el historial de navegación del usuario.
+
+## Métodos de history
+```javascript
+
+   // Regresar a la página anterior
+   history.back();
+
+   // Avanzar a la siguiente página
+   history.forward();
+
+   // Ir a una página específica en el historial (ejemplo: -2 retrocede dos páginas)
+   history.go(-2);
+
+
+```
+
+# setInterval() y clearInterval() en JavaScript
+`setInterval(función, tiempo)`: Ejecuta una función repetidamente cada cierto intervalo de tiempo (en milisegundos).
+
+`clearInterval(id)`: Detiene un intervalo en ejecución.
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventana Mágica 🪄</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="d-flex justify-content-center align-items-center vh-100 bg-light">
+
+    <div class="text-center">
+        <h2>🎩 Ventana Mágica 🪄</h2>
+        <p>Haz clic en el botón para abrir una ventana que se moverá aleatoriamente por la pantalla.</p>
+        <button id="abrirVentana" class="btn btn-primary">Abrir Ventana</button>
+        <button id="cerrarVentana" class="btn btn-danger" disabled>Cerrar Ventana</button>
+    </div>
+
+    <script>
+        let ventanaMagica;
+
+        // Función para abrir la ventana y moverla aleatoriamente
+        function abrirVentanaMagica() {
+
+            if ( !ventanaMagica || ventanaMagica.closed ) {
+                
+                let ancho = 400;
+                let alto = 300;
+                
+                // Obtener dimensiones de la pantalla con screen
+                let screenW = screen.availWidth;
+                let screenH = screen.availHeight;
+
+                // Posición inicial aleatoria
+                let posX = Math.floor(Math.random() * (screenW - ancho));
+                let posY = Math.floor(Math.random() * (screenH - alto));
+
+                // Abrir la ventana en una posición aleatoria
+                ventanaMagica = window.open(
+                    "", 
+                    "VentanaMagica", 
+                    `width=${ancho},height=${alto},left=${posX},top=${posY}`
+                );
+
+                // Agregar contenido a la ventana emergente
+                ventanaMagica.document.body.innerHTML = `
+                    <h1>🎉 ¡Contenido agregado con innerHTML!</h1>
+                    <p>Esta ventana fue creada y luego modificada.</p>
+                    <button onclick="window.close()">Cerrar Ventana</button>
+                `;
+
+                // Mover la ventana cada segundo
+                let intervalo = setInterval(() => {
+                    
+                    if (ventanaMagica.closed) {
+                        clearInterval(intervalo);
+                        document.getElementById("cerrarVentana").setAttribute("disabled", "true");
+                        return;
+                    }
+
+                    let newX = Math.floor(Math.random() * (screenW - ancho));
+                    let newY = Math.floor(Math.random() * (screenH - alto));
+
+                    ventanaMagica.moveTo(newX, newY);
+                }, 1000);
+
+                // Habilitar botón de cerrar
+                document.getElementById("cerrarVentana").removeAttribute("disabled");
+            }
+            
+        }
+
+        // Función para cerrar la ventana
+        function cerrarVentanaMagica() {
+            if (ventanaMagica) {
+                ventanaMagica.close();
+                document.getElementById("cerrarVentana").setAttribute("disabled", "true");
+            }
+        }
+
+        // Asignar eventos a los botones
+        document.getElementById("abrirVentana").addEventListener("click", abrirVentanaMagica);
+        document.getElementById("cerrarVentana").addEventListener("click", cerrarVentanaMagica);
+    </script>
+
+</body>
+</html>
+
+```
 
 
 
