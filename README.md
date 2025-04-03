@@ -1636,5 +1636,760 @@ Permite interactuar con el historial de navegación del usuario.
 
 ```
 
+# Experiencia de aprendizaje 2: Aplicando JavaScript para intervenir los elementos del DOM
+# Semana 4: Manipulando el DOM
+
+# Dom
+
+El DOM (Document Object Model) es una representación en forma de árbol de la estructura de un documento HTML (o XML). El DOM proporciona una interfaz que permite acceder y manipular los elementos y contenido de un documento web.
+
+En JavaScript, podemos interactuar con el DOM para realizar diversas tareas, como acceder a elementos HTML, modificar su contenido, agregar o eliminar elementos, cambiar estilos y manejar eventos.
+
+A continuación, te mostraré un ejemplo básico de cómo acceder y manipular el DOM utilizando JavaScript:
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+</head>
+
+<body>
+    <h1 id="titulo">Título</h1>
+    <p id="parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+    <button id="boton">Haz clic</button>
+
+    <script>
+        // Acceder a un elemento HTML
+        const titulo = document.getElementById("titulo");
+        console.log(titulo);
+
+        // Modificar el contenido de un elemento HTML
+        titulo.textContent = "Nuevo título";
+
+        // Agregar un evento a un elemento HTML
+        const boton = document.getElementById("boton");
+        boton.addEventListener("click", () => {
+            console.log("Haz hecho clic en el botón");
+        });
+    </script>
+</body>
+</html>
+```
+
+En este ejemplo, accedemos a un elemento HTML utilizando el método `getElementById` y lo almacenamos en una variable llamada `titulo`. Luego, modificamos el contenido del elemento utilizando la propiedad `textContent`. Finalmente, agregamos un evento al botón utilizando el método `addEventListener`.
+
+Aqui podemos ver otro ejemplo de como acceder y manipular el DOM utilizando JavaScript:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Manipulación del DOM</title>
+</head>
+<body>
+  <h1 id="titulo">¡Hola, Mundo!</h1>
+  <p id="parrafo">Este es un párrafo de ejemplo.</p>
+
+  <script>
+    // Acceder a elementos del DOM
+    const tituloElemento = document.getElementById("titulo");
+    const parrafoElemento = document.getElementById("parrafo");
+
+    // Modificar contenido de elementos
+    tituloElemento.textContent = "¡Hola, UDD!";
+    parrafoElemento.innerHTML = "Este es un párrafo modificado.";
+
+    // Agregar un nuevo elemento
+    const nuevoElemento = document.createElement("p");
+    nuevoElemento.textContent = "Este es un nuevo párrafo.";
+    document.body.appendChild(nuevoElemento);
+
+    // Cambiar estilos
+    tituloElemento.style.color = "red";
+    parrafoElemento.style.fontSize = "20px";
+
+    // Manejar eventos
+    tituloElemento.addEventListener("click", function() {
+      alert("¡Haz hecho clic en el título!");
+    });
+  </script>
+</body>
+</html>
+```
+
+En este ejemplo, utilizamos JavaScript dentro de la etiqueta `<script>` para acceder y manipular el DOM. Algunas acciones que realizamos son:
+
+- Acceder a elementos del DOM utilizando `getElementById`.
+- Modificar el contenido de elementos utilizando `textContent` y `innerHTML`.
+- Crear un nuevo elemento utilizando `createElement` y agregarlo al DOM utilizando `appendChild`.
+- Cambiar estilos utilizando la propiedad `style`.
+- Manejar eventos utilizando `addEventListener`.
+
+Recuerda que el DOM puede tener una estructura más compleja, con elementos anidados y diferentes atributos. Sin embargo, el ejemplo anterior te da una idea básica de cómo interactuar con el DOM utilizando JavaScript.
+
+## Buenas prácticas
+
+Algunas buenas prácticas para trabajar con el DOM son:
+
+**Cachea las referencias a elementos del DOM:** Al acceder a elementos del DOM utilizando métodos como `getElementById` o `querySelector`, almacena esas referencias en variables para evitar buscar los elementos repetidamente. Esto mejora el rendimiento y evita el código redundante.
+
+```javascript
+// Mala práctica: Acceder al elemento del DOM cada vez que se necesita
+document.getElementById("myElement").textContent = "Hola";
+
+// Buena práctica: Almacenar la referencia del elemento en una variable
+const myElement = document.getElementById("myElement");
+myElement.textContent = "Hola";
+```
+
+**Utiliza eventos delegados:** En lugar de adjuntar un controlador de eventos a cada elemento individualmente, considera utilizar eventos delegados. Esto implica adjuntar el controlador de eventos a un elemento superior que contiene a todos los elementos objetivo. Luego, puedes utilizar la propiedad `event.target` para identificar el elemento específico que desencadenó el evento.
+
+```javascript
+// Mala práctica: Adjuntar un controlador de eventos a cada elemento
+const button1 = document.getElementById("button1");
+button1.addEventListener("click", function() {
+  // Lógica del evento para button1
+});
+
+const button2 = document.getElementById("button2");
+button2.addEventListener("click", function() {
+  // Lógica del evento para button2
+});
+
+// Buena práctica: Utilizar eventos delegados
+const container = document.getElementById("container");
+container.addEventListener("click", function(event) {
+  if (event.target.matches("button")) {
+    // Lógica del evento para los botones
+  }
+});
+```
+
+**Evita la manipulación excesiva del DOM:** Realizar muchas modificaciones al DOM puede ser costoso en términos de rendimiento. En lugar de hacer múltiples cambios, considera agrupar las modificaciones en un solo bloque utilizando fragmentos de documento o manipulando cadenas de texto, y luego realizar una sola modificación al DOM.
+
+```javascript
+// Mala práctica: Modificar el DOM varias veces
+const container = document.getElementById("container");
+container.innerHTML = "";
+container.appendChild(element1);
+container.appendChild(element2);
+container.appendChild(element3);
+
+// Buena práctica: Agrupar las modificaciones y realizar una sola modificación
+const container = document.getElementById("container");
+const fragment = document.createDocumentFragment();
+fragment.appendChild(element1);
+fragment.appendChild(element2);
+fragment.appendChild(element3);
+container.innerHTML = "";
+container.appendChild(fragment);
+```
+
+**Elimina los event listeners:** Si adjuntas un event listener a un elemento y posteriormente ya no lo necesitas, asegúrate de eliminarlo para evitar posibles fugas de memoria. Puedes utilizar el método `removeEventListener` para eliminar el event listener asociado a un elemento.
+
+```javascript
+// Mala práctica: No eliminar el event listener
+const button = document.getElementById("myButton");
+button.addEventListener("click", myFunction);
+
+// Buena práctica: Eliminar el event listener cuando ya no se necesita
+const button = document.getElementById("myButton");
+button.addEventListener("click", myFunction);
+
+// Cuando ya no se necesita el event listener
+button.removeEventListener("click", myFunction);
+```
+
+Estas son solo algunas buenas prácticas al trabajar con el DOM en JavaScript. Recuerda que cada caso puede ser diferente y es importante adaptar las prácticas según las necesidades de tu proyecto.
+
+
+# Eventos
+
+Los eventos en JavaScript son acciones o sucesos que ocurren en el navegador y a los que podemos responder mediante la ejecución de código. Los eventos pueden ser desencadenados por el usuario (por ejemplo, hacer clic en un elemento, mover el mouse sobre un elemento, presionar una tecla) o pueden ser eventos generados por el propio navegador (por ejemplo, cargar la página, cambiar el tamaño de la ventana).
+
+Para trabajar con eventos en JavaScript, generalmente utilizamos el método `addEventListener` para adjuntar un controlador de eventos a un elemento del DOM. El controlador de eventos es una función que se ejecutará cuando ocurra el evento.
+
+A continuación, te mostraré un ejemplo básico de cómo trabajar con eventos en JavaScript:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Eventos en JavaScript</title>
+</head>
+<body>
+  <button id="myButton">Haz clic aquí</button>
+
+  <script>
+    // Obtener una referencia al elemento del botón
+    const button = document.getElementById("myButton");
+
+    // Adjuntar un controlador de eventos al botón
+    button.addEventListener("click", function() {
+      alert("¡Has hecho clic en el botón!");
+    });
+  </script>
+</body>
+</html>
+```
+
+En este ejemplo, utilizamos JavaScript dentro de la etiqueta `<script>` para trabajar con eventos. Algunas acciones que realizamos son:
+
+- Utilizar `getElementById` para obtener una referencia al elemento del botón.
+- Utilizar `addEventListener` para adjuntar un controlador de eventos al botón.
+- El controlador de eventos es una función anónima que se ejecutará cuando ocurra el evento de clic en el botón. En este caso, muestra un mensaje emergente utilizando `alert`.
+
+Existen muchos eventos disponibles en JavaScript, como `click`, `mouseenter`, `keydown`, `submit`, entre otros. Puedes consultar la documentación oficial de eventos en JavaScript para obtener más información sobre los diferentes tipos de eventos y cómo utilizarlos.
+
+[Referencia de Eventos Developer Mozilla](https://developer.mozilla.org/es/docs/Web/Events)
+
+| Tipo de Evento      | Evento            | Descripción                                                                 |
+|---------------------|-------------------|-----------------------------------------------------------------------------|
+| **Mouse**           | click             | Se dispara cuando se hace clic con el botón izquierdo del ratón            |
+|                     | dblclick          | Se dispara cuando se hace doble clic con el ratón                          |
+|                     | mouseover         | Se dispara cuando el puntero entra en el área de un elemento               |
+|                     | mouseout          | Se dispara cuando el puntero sale del área de un elemento                  |
+|                     | mousedown         | Se dispara cuando se presiona un botón del ratón                           |
+|                     | mouseup           | Se dispara cuando se suelta un botón del ratón                             |
+|                     | mousemove         | Se dispara cuando el puntero se mueve sobre un elemento                    |
+| **Teclado**         | keydown           | Se dispara cuando se presiona una tecla                                    |
+|                     | keyup             | Se dispara cuando se suelta una tecla                                      |
+|                     | keypress          | Se dispara cuando se presiona una tecla (obsoleto en algunos navegadores)  |
+| **Formulario**      | submit            | Se dispara al enviar un formulario                                         |
+|                     | change            | Se dispara cuando el valor de un input cambia (select, input, textarea)    |
+|                     | input             | Se dispara en cada cambio del valor de un input                            |
+|                     | focus             | Se dispara cuando un input recibe foco                                     |
+|                     | blur              | Se dispara cuando un input pierde el foco                                  |
+| **Ventana/Navegador**| load              | Se dispara cuando una página o recurso ha terminado de cargarse            |
+|                     | unload            | Se dispara cuando se está saliendo de la página (obsoleto en algunos casos)|
+|                     | resize            | Se dispara cuando se cambia el tamaño de la ventana                        |
+|                     | scroll            | Se dispara cuando se hace scroll en un elemento o en la ventana            |
+| **Clipboard**       | copy              | Se dispara cuando se copia contenido                                       |
+|                     | cut               | Se dispara cuando se corta contenido                                       |
+|                     | paste             | Se dispara cuando se pega contenido                                        |
+
+
+Recuerda que los eventos son fundamentales para interactuar con los usuarios y responder a sus acciones en el navegador. Al utilizar eventos de manera efectiva, puedes crear interacciones dinámicas y enriquecer la experiencia del usuario en tu sitio web o aplicación.
+
+# Selección del DOM
+
+La selección de elementos del DOM en JavaScript se refiere a la capacidad de acceder a elementos específicos dentro de la estructura del documento HTML utilizando métodos y selectores proporcionados por el DOM. Esto nos permite interactuar y manipular los elementos de una página web de forma programática.
+
+Existen varios métodos y selectores que podemos utilizar para seleccionar elementos del DOM. A continuación, te mostraré algunos ejemplos:
+
+## getElementById
+
+El método `getElementById` permite seleccionar un elemento por su ID, que debe ser único en el documento HTML. Devuelve el primer elemento que coincide con el ID especificado.
+
+```javascript
+const element = document.getElementById('myElement');
+```
+
+## getElementsByClassName
+
+El método `getElementsByClassName` permite seleccionar elementos por su clase. Devuelve una lista de elementos que tienen la clase especificada.
+
+```javascript
+const elements = document.getElementsByClassName('myClass');
+```
+
+## getElementsByTagName
+
+El método `getElementsByTagName` permite seleccionar elementos por su etiqueta. Devuelve una lista de elementos que tienen la etiqueta especificada.
+
+```javascript
+const elements = document.getElementsByTagName('div');
+```
+
+## querySelector
+
+El método `querySelector` permite seleccionar un elemento utilizando un selector CSS. Devuelve el primer elemento que coincide con el selector especificado.
+
+```javascript
+const element = document.querySelector('#myElement');
+```
+
+## querySelectorAll
+
+El método `querySelectorAll` permite seleccionar elementos utilizando un selector CSS. Devuelve una lista de todos los elementos que coinciden con el selector especificado.
+
+```javascript
+const elements = document.querySelectorAll('.myClass');
+```
+
+En el siguiente ejemplo, utilizaremos todos los métodos y selectores mencionados anteriormente para seleccionar elementos del DOM.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Selección de elementos del DOM</title>
+</head>
+<body>
+  <h1 id="titulo">Título</h1>
+  <p class="parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+  <ul>
+    <li>Elemento 1</li>
+    <li>Elemento 2</li>
+    <li>Elemento 3</li>
+  </ul>
+  <div>
+    <p>Texto 1</p>
+    <p>Texto 2</p>
+    <p>Texto 3</p>
+  </div>
+
+  <script>
+    // getElementById: selecciona un elemento por su id
+    const titulo = document.getElementById('titulo');
+    console.log(titulo);
+
+    // getElementsByClassName: selecciona elementos por su clase
+    const parrafos = document.getElementsByClassName('parrafo');
+    console.log(parrafos);
+
+    // getElementsByTagName: selecciona elementos por su etiqueta
+    const elementosLista = document.getElementsByTagName('li');
+    console.log(elementosLista);
+
+    // querySelector: selecciona el primer elemento que coincide con un selector CSS
+    const texto1 = document.querySelector('div p');
+    console.log(texto1);
+
+    // querySelectorAll: selecciona todos los elementos que coinciden con un selector CSS
+    const todosLosParrafos = document.querySelectorAll('p');
+    console.log(todosLosParrafos);
+  </script>
+</body>
+</html>
+```
+
+En este ejemplo, utilizamos diferentes métodos para seleccionar elementos del DOM:
+
+- `getElementById`: Utilizamos `document.getElementById('titulo')` para seleccionar el elemento `<h1>` con el id "titulo". El elemento seleccionado se almacena en la variable `titulo`.
+
+- `getElementsByClassName`: Utilizamos `document.getElementsByClassName('parrafo')` para seleccionar todos los elementos con la clase "parrafo". Los elementos seleccionados se almacenan en la variable `parrafos`.
+
+- `getElementsByTagName`: Utilizamos `document.getElementsByTagName('li')` para seleccionar todos los elementos `<li>`. Los elementos seleccionados se almacenan en la variable `elementosLista`.
+
+- `querySelector`: Utilizamos `document.querySelector('div p')` para seleccionar el primer elemento `<p>` que se encuentra dentro de un elemento `<div>`. El elemento seleccionado se almacena en la variable `texto1`.
+
+- `querySelectorAll`: Utilizamos `document.querySelectorAll('p')` para seleccionar todos los elementos `<p>` en el documento. Los elementos seleccionados se almacenan en la variable `todosLosParrafos`.
+
+En cada caso, utilizamos `console.log` para mostrar los elementos seleccionados en la consola del navegador.
+
+Ten en cuenta que estos métodos de selección de elementos te permiten interactuar y manipular los elementos del DOM de diferentes formas. Puedes acceder a sus propiedades, modificar su contenido, aplicar estilos, agregar o eliminar elementos, y mucho más.
+
+Estos son solo algunos ejemplos de cómo seleccionar elementos del DOM en JavaScript. Además de los métodos mencionados, existen otros métodos y selectores más avanzados que permiten una selección más precisa y flexible.
+
+Recuerda que al seleccionar elementos del DOM, es importante tener en cuenta la estructura del documento HTML y utilizar selectores adecuados para acceder a los elementos deseados. También puedes utilizar las referencias almacenadas en variables para acceder a los elementos seleccionados y manipularlos de manera más eficiente.
+
+# Crear elementos
+
+Para crear elementos en el DOM utilizando JavaScript, podemos utilizar el método `createElement`. Este método nos permite crear un nuevo elemento HTML con la etiqueta especificada y luego podemos agregarlo al DOM utilizando métodos como `appendChild` o `insertBefore`.
+
+A continuación, te mostraré un ejemplo de cómo crear elementos en el DOM:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Creación de elementos en JavaScript</title>
+</head>
+<body>
+  <div id="container"></div>
+
+  <script>
+    // Obtener una referencia al contenedor
+    const container = document.getElementById('container');
+
+    // Crear un nuevo elemento
+    const newElement = document.createElement('p');
+
+    // Asignar contenido al nuevo elemento
+    newElement.textContent = 'Este es un nuevo párrafo creado con JavaScript';
+
+    // Agregar el nuevo elemento al contenedor
+    container.appendChild(newElement);
+  </script>
+</body>
+</html>
+```
+
+En este ejemplo, utilizamos JavaScript dentro de la etiqueta `<script>` para crear un nuevo elemento `p` y agregarlo al DOM. Aquí está el flujo de trabajo:
+
+- Utilizamos `getElementById` para obtener una referencia al elemento del contenedor.
+- Creamos un nuevo elemento utilizando `createElement` y especificamos la etiqueta deseada, en este caso, `p`.
+- Asignamos contenido al nuevo elemento utilizando la propiedad `textContent`.
+- Agregamos el nuevo elemento al contenedor utilizando `appendChild`.
+
+Al ejecutar este código, verás que se agrega un nuevo párrafo al contenedor en la página web.
+
+Recuerda que una vez que has creado un elemento, puedes manipularlo aún más, agregarle atributos, estilos o incluso adjuntar eventos a él antes de agregarlo al DOM. El método `createElement` es muy útil para generar elementos de forma dinámica y personalizada en respuesta a la lógica de tu aplicación.
+
+
+# Eventos del dom
+
+Los eventos del DOM son acciones o sucesos que ocurren en los elementos del documento HTML y a los cuales se puede responder mediante la ejecución de código JavaScript. Los eventos permiten interactuar con los usuarios y capturar sus acciones, como hacer clic en un elemento, mover el mouse, escribir en un campo de texto, entre otros.
+
+JavaScript proporciona diferentes métodos para adjuntar y manejar eventos en los elementos del DOM. A continuación, te mostraré algunos ejemplos de eventos comunes y cómo trabajar con ellos:
+
+## onchange
+
+El evento `onchange` se desencadena cuando el valor de un elemento cambia y pierde el foco, como en el caso de los campos de entrada de texto o las listas desplegables.
+
+```html
+<input type="text" onchange="miFuncion()">
+```
+
+En este ejemplo, cuando el usuario cambie el valor del campo de entrada y salga del mismo, se ejecutará la función `miFuncion()`.
+
+## onclick
+
+El evento `onclick` se desencadena cuando se hace clic en un elemento, como un botón o un enlace.
+
+```html
+<button onclick="miFuncion()">Haz clic</button>
+```
+
+En este ejemplo, cuando el usuario haga clic en el botón, se ejecutará la función `miFuncion()`.
+
+## onmouseover y onmouseout
+
+Los eventos `onmouseover` y `onmouseout` se desencadenan cuando el cursor del mouse se mueve sobre un elemento o sale de él, respectivamente.
+
+```html
+<div onmouseover="miFuncion()" onmouseout="miOtraFuncion()"></div>
+```
+
+En este ejemplo, cuando el cursor del mouse se mueva sobre el elemento `div`, se ejecutará la función `miFuncion()`, y cuando el cursor del mouse salga del elemento `div`, se ejecutará la función `miOtraFuncion()`.
+
+## onkeydown
+
+El evento `onkeydown` se desencadena cuando se presiona una tecla del teclado mientras un elemento tiene el foco, como un campo de entrada de texto.
+
+```html
+<input type="text" onkeydown="miFuncion(event)">
+```
+
+En este ejemplo, cuando el usuario presione una tecla mientras el campo de entrada de texto tiene el foco, se ejecutará la función `miFuncion()` y se pasará el evento como argumento.
+
+## Evento click
+
+El evento `click` se desencadena cuando se hace clic en un elemento.
+
+```javascript
+const button = document.getElementById('myButton');
+
+button.addEventListener('click', function() {
+  // Lógica a ejecutar cuando se hace clic en el botón
+});
+```
+
+## Evento submit
+
+El evento `submit` se desencadena cuando se envía un formulario.
+
+```javascript
+const form = document.getElementById('myForm');
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault(); // Evita que el formulario se envíe
+
+  // Lógica a ejecutar cuando se envía el formulario
+});
+```
+
+## Evento input
+
+El evento `input` se desencadena cuando se realiza un cambio en un campo de entrada, como un campo de texto.
+
+```javascript
+const input = document.getElementById('myInput');
+
+input.addEventListener('input', function() {
+  // Lógica a ejecutar cuando cambia el valor del campo de entrada
+});
+```
+
+## Evento mouseover y mouseout
+
+Los eventos `mouseover` y `mouseout` se desencadenan cuando el mouse se mueve sobre un elemento y sale de él, respectivamente.
+
+```javascript
+const element = document.getElementById('myElement');
+
+element.addEventListener('mouseover', function() {
+  // Lógica a ejecutar cuando el mouse se mueve sobre el elemento
+});
+
+element.addEventListener('mouseout', function() {
+  // Lógica a ejecutar cuando el mouse sale del elemento
+});
+```
+
+## Recomendación
+
+Es importante tener en cuenta que los atributos de eventos en línea, como `onchange`, `onclick`, etc., se utilizan comúnmente para casos sencillos. Sin embargo, en situaciones más complejas, se recomienda utilizar el método `addEventListener` para adjuntar eventos de manera más flexible y separar el código JavaScript del HTML.
+
+```html
+<button id="myButton">Haz clic</button>
+
+<script>
+  const button = document.getElementById("myButton");
+
+  button.addEventListener("click", function() {
+    // Lógica del evento onclick utilizando addEventListener
+    miFuncion();
+  });
+</script>
+```
+
+En este caso, se utiliza `addEventListener` para adjuntar el evento `click` al botón y ejecutar la función `miFuncion()` cuando se hace clic en el botón.
+
+En el siguiente ejemplo utilizaremos algunos de los eventos del DOM que hemos visto hasta ahora:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Eventos del DOM</title>
+</head>
+<body>
+  <h1>Eventos del DOM</h1>
+  <input type="text" id="inputText" onchange="mostrarMensaje()">
+  <button onclick="cambiarColor()">Haz clic</button>
+  <p onmouseover="mostrarMensaje('¡Pasaste el mouse por encima!')" onmouseout="mostrarMensaje('¡Mouse fuera!')">Pasa el mouse aquí</p>
+  <input type="text" onkeydown="mostrarTecla(event)">
+
+  <script>
+    function mostrarMensaje(mensaje) {
+      if (mensaje) {
+        console.log(mensaje);
+      } else {
+        console.log("El valor del input ha cambiado");
+      }
+    }
+
+    function cambiarColor() {
+      document.body.style.backgroundColor = "red";
+    }
+
+    function mostrarTecla(event) {
+      console.log("Tecla presionada: " + event.key);
+    }
+  </script>
+</body>
+</html>
+```
+
+En este ejemplo, se utilizan diferentes eventos del DOM:
+
+- `onchange`: Se utiliza en un campo de entrada de texto (`<input>`) con el atributo `onchange="mostrarMensaje()"`. Cuando el valor del campo de entrada cambia y se pierde el enfoque del campo, se ejecuta la función `mostrarMensaje()`. En este caso, la función muestra un mensaje en la consola indicando que el valor del input ha cambiado.
+
+- `onclick`: Se utiliza en un botón (`<button>`) con el atributo `onclick="cambiarColor()"`. Cuando se hace clic en el botón, se ejecuta la función `cambiarColor()`. En este caso, la función cambia el color de fondo del `<body>` a rojo.
+
+- `onmouseover` y `onmouseout`: Se utilizan en un párrafo (`<p>`) con los atributos `onmouseover="mostrarMensaje('¡Pasaste el mouse por encima!')"` y `onmouseout="mostrarMensaje('¡Mouse fuera!')"`. Cuando el cursor del mouse se mueve sobre el párrafo, se ejecuta la función `mostrarMensaje()` con el mensaje correspondiente. Cuando el cursor se mueve fuera del párrafo, también se ejecuta la función `mostrarMensaje()` con el mensaje correspondiente.
+
+- `onkeydown`: Se utiliza en un campo de entrada de texto (`<input>`) con el atributo `onkeydown="mostrarTecla(event)"`. Cuando se presiona una tecla mientras el campo de entrada tiene el foco, se ejecuta la función `mostrarTecla()` y se pasa como argumento el evento (`event`) que contiene información sobre la tecla presionada. En este caso, la función muestra en la consola la tecla presionada.
+
+Cada evento está asociado a una función que se ejecuta cuando ocurre ese evento en el elemento correspondiente. Puedes personalizar las funciones y los mensajes según tus necesidades y agregar más lógica para interactuar con los elementos del DOM en respuesta a los eventos.
+
+Estos son solo algunos ejemplos de eventos comunes que se pueden utilizar en JavaScript. Existen muchos más eventos disponibles, como `keydown`, `keyup`, `change`, `focus`, `blur`, entre otros. Puedes consultar la documentación oficial de eventos en JavaScript para obtener más información sobre los diferentes tipos de eventos y cómo utilizarlos.
+
+Recuerda que los eventos son una parte fundamental de la interacción con los usuarios en una página web, y mediante su uso adecuado, puedes capturar y responder a las acciones del usuario para crear una experiencia interactiva y dinámica.
+
+
+# Agregar eventos a elementos en JavaScript
+
+Para agregar eventos a los elementos del DOM en JavaScript, puedes utilizar el método `addEventListener`. Este método te permite adjuntar un controlador de eventos a un elemento específico y especificar qué código se ejecutará cuando ocurra ese evento en particular.
+
+A continuación, te muestro un ejemplo de cómo agregar eventos a los elementos del DOM utilizando `addEventListener`:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Agregar eventos a elementos en JavaScript</title>
+</head>
+<body>
+  <button id="myButton">Haz clic aquí</button>
+
+  <script>
+    // Obtener una referencia al elemento del botón
+    const button = document.getElementById('myButton');
+
+    // Agregar un controlador de eventos al botón
+    button.addEventListener('click', function() {
+      // Lógica a ejecutar cuando se hace clic en el botón
+      console.log('Se hizo clic en el botón');
+    });
+  </script>
+</body>
+</html>
+```
+
+En este ejemplo, utilizamos JavaScript dentro de la etiqueta `<script>` para agregar un evento `click` al botón. Aquí está el flujo de trabajo:
+
+1. Utilizamos `getElementById` para obtener una referencia al elemento del botón.
+2. Utilizamos `addEventListener` para adjuntar un controlador de eventos al botón y especificamos el tipo de evento (`click`) y la función que se ejecutará cuando ocurra el evento.
+3. Dentro de la función del controlador de eventos, escribimos el código que deseamos que se ejecute cuando el evento ocurra. En este caso, simplemente mostramos un mensaje en la consola.
+
+Al ejecutar este código y hacer clic en el botón, verás que se muestra el mensaje "Se hizo clic en el botón" en la consola.
+
+Puedes agregar múltiples eventos a un elemento, simplemente llamando a `addEventListener` con diferentes tipos de eventos y funciones de controladores.
+
+Recuerda que el método `addEventListener` también te permite adjuntar eventos a otros elementos del DOM, como campos de entrada, enlaces, elementos de lista, etc. Simplemente necesitas obtener una referencia al elemento deseado y llamar a `addEventListener` para agregar el evento correspondiente.
+
+Además, puedes utilizar funciones anónimas como en el ejemplo anterior o también puedes utilizar funciones definidas por separado para tus controladores de eventos, lo que puede facilitar el mantenimiento y la reutilización de código.
+
+
+# Manipulación de atributos
+
+La manipulación de atributos en JavaScript nos permite acceder y modificar los atributos de los elementos del DOM. Podemos agregar, modificar y eliminar atributos utilizando métodos y propiedades proporcionados por el DOM.
+
+A continuación, te muestro algunos ejemplos de cómo manipular atributos en JavaScript:
+
+## Acceder a un atributo
+
+Para acceder al valor de un atributo de un elemento, podemos utilizar la propiedad `getAttribute` del elemento.
+
+```html
+<img id="myImage" src="imagen.jpg" alt="Imagen de ejemplo">
+```
+
+```javascript
+const image = document.getElementById('myImage');
+const src = image.getAttribute('src');
+const alt = image.getAttribute('alt');
+
+console.log(src); // Resultado: imagen.jpg
+console.log(alt); // Resultado: Imagen de ejemplo
+```
+
+En este ejemplo, utilizamos `getAttribute` para obtener los valores de los atributos `src` y `alt` de la imagen.
+
+## Modificar un atributo
+
+Para modificar el valor de un atributo de un elemento, podemos utilizar el método `setAttribute` del elemento.
+
+```html
+<img id="myImage" src="imagen.jpg" alt="Imagen de ejemplo">
+```
+
+```javascript
+const image = document.getElementById('myImage');
+image.setAttribute('src', 'nueva-imagen.jpg');
+image.setAttribute('alt', 'Nueva imagen de ejemplo');
+```
+
+En este ejemplo, utilizamos `setAttribute` para cambiar los valores de los atributos `src` y `alt` de la imagen.
+
+## Eliminar un atributo
+
+Para eliminar un atributo de un elemento, podemos utilizar el método `removeAttribute` del elemento.
+
+```html
+<img id="myImage" src="imagen.jpg" alt="Imagen de ejemplo">
+```
+
+```javascript
+const image = document.getElementById('myImage');
+image.removeAttribute('alt');
+```
+
+En este ejemplo, utilizamos `removeAttribute` para eliminar el atributo `alt` de la imagen.
+
+En el siguiente ejemplo utilizaremos los métodos mencionados anteriormente para manipular atributos en JavaScript.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Manipulación de atributos del DOM</title>
+</head>
+<body>
+  <h1 id="titulo">Título</h1>
+  <img src="imagen.jpg" alt="Imagen" id="imagen" width="200" height="200">
+  <button onclick="mostrarAtributo()">Mostrar Atributo</button>
+  <button onclick="cambiarAtributo()">Cambiar Atributo</button>
+  <button onclick="verificarAtributo()">Verificar Atributo</button>
+  <button onclick="eliminarAtributo()">Eliminar Atributo</button>
+
+  <script>
+    function mostrarAtributo() {
+      const imagen = document.getElementById('imagen');
+      const src = imagen.getAttribute('src');
+      console.log('Atributo src:', src);
+    }
+
+    function cambiarAtributo() {
+      const imagen = document.getElementById('imagen');
+      imagen.setAttribute('src', 'nueva-imagen.jpg');
+      imagen.setAttribute('alt', 'Nueva Imagen');
+      console.log('Atributos cambiados');
+    }
+
+    function verificarAtributo() {
+      const imagen = document.getElementById('imagen');
+      const tieneAlt = imagen.hasAttribute('alt');
+      console.log('¿La imagen tiene el atributo alt?', tieneAlt);
+    }
+
+    function eliminarAtributo() {
+      const imagen = document.getElementById('imagen');
+      imagen.removeAttribute('width');
+      imagen.removeAttribute('height');
+      console.log('Atributos eliminados');
+    }
+  </script>
+</body>
+</html>
+```
+
+En este ejemplo, utilizamos diferentes métodos para manipular atributos de elementos del DOM:
+
+- `getAttribute`: En la función `mostrarAtributo()`, utilizamos `getAttribute('src')` para obtener el valor del atributo `src` de la imagen. Luego, mostramos el valor del atributo en la consola.
+
+- `setAttribute`: En la función `cambiarAtributo()`, utilizamos `setAttribute('src', 'nueva-imagen.jpg')` para cambiar el valor del atributo `src` de la imagen por "nueva-imagen.jpg". También utilizamos `setAttribute('alt', 'Nueva Imagen')` para cambiar el valor del atributo `alt` de la imagen. Luego, mostramos un mensaje en la consola indicando que los atributos han sido cambiados.
+
+- `hasAttribute`: En la función `verificarAtributo()`, utilizamos `hasAttribute('alt')` para verificar si la imagen tiene el atributo `alt`. Mostramos un mensaje en la consola indicando si la imagen tiene o no el atributo.
+
+- `removeAttribute`: En la función `eliminarAtributo()`, utilizamos `removeAttribute('width')` y `removeAttribute('height')` para eliminar los atributos `width` y `height` de la imagen. Mostramos un mensaje en la consola indicando que los atributos han sido eliminados.
+
+Puedes utilizar estos métodos para acceder, modificar, verificar y eliminar atributos de elementos del DOM según tus necesidades. Recuerda que los nombres de los atributos deben coincidir exactamente con los nombres utilizados en el código HTML.
+
+Recuerda que los atributos también pueden tener eventos asociados. Si deseas agregar o eliminar eventos específicos, puedes utilizar los métodos `addEventListener` y `removeEventListener`, respectivamente.
+
+La manipulación de atributos en JavaScript es útil cuando necesitas cambiar dinámicamente los valores de los atributos de los elementos del DOM. Esto puede ser útil para actualizar imágenes, cambiar textos alternativos, actualizar enlaces, etc.
+
+Es importante tener en cuenta que algunos atributos, como `id` y `class`, también tienen propiedades correspondientes en los elementos del DOM. Puedes acceder y modificar estas propiedades directamente en lugar de utilizar los métodos `getAttribute` y `setAttribute`.
+
+Recuerda que al manipular atributos, debes tener en cuenta la estructura y la semántica adecuada de tu documento HTML y asegurarte de seguir las buenas prácticas para mantener un código limpio y mantenible.
+
+
+
+# Ejercicios
+
+### Ejercicio 1 - Crear elementos
+Crea una función que reciba un array de strings como parámetro y utilice la función `map` y la sintaxis de string templates para devolver un nuevo array donde cada elemento corresponda a la siguiente cadena: "El elemento `n` es `nombre`", donde `n` es la posición del elemento en el array y `nombre` es el valor del elemento.
+
+### Ejercicio 2 - Botones con acciones
+Agregar 3 botones en el HTML que permitan hacer lo siguiente:
+
+- El primero agrega un encabezado (H1) en el documento.
+- En ambos casos tanto al h1 como a la etiqueta p agrega un id único.
+- El segundo agrega un párrafo (P) en el documento.
+- El tercero ejecutará un alert con un mensaje.
+
+### Ejercicio 3 - Manipulación de div con botones
+Agregar un div de tamaño 300 x 300 px y 3 botones al HTML y cada botón tendrá un evento que realizará lo siguiente:
+
+- El primero cambiará el fondo del div a color rojo.
+- El segundo le cambiará el tamaño al div a 500 x 500 px.
+- El tercero le asignará un borde al div
+
 
 
