@@ -47,6 +47,7 @@ function addList(e){
     elementList.classList.add('list-group-item')
     elementList.innerText = DOM.inputAgregar.value
     DOM.lista.appendChild(elementList);
+
     DOM.inputAgregar.value = ''
 }
 
