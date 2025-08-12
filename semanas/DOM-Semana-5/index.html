@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo HTML y CSS</title>
+    <!-- Incluye Bootstrap para estilos adicionales -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body class="bg-light pt-5">
+
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark d-flex align-items-center fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="assets/img/javascript.svg" alt="JS">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav flex-row flex-wrap ms-md-auto gap-3">
+              <li class="nav-item">
+                <a class="btn btn-primary active" aria-current="page" href="#" id="changeColor">Cambiar color de encabezados</a>
+              </li>
+              <li class="nav-item">
+                <a class="btn btn-secondary" href="#" id="changeFont">Cambiar fuente de encabezados</a>
+              </li>
+              <li class="nav-item">
+                <a class="btn btn-success" href="#" id="changeText">Cambiar texto</a>
+              </li>
+              <li class="nav-item">
+                <a class="btn btn-warning" id="changeURL">Cambiar ruta de la imagen</a>
+              </li>
+
+
+            
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-5">
+
+        <div class="row">
+            <div class="col-md-8">
+                <h1 class="header h1-header" id="header1">Lorem Ipsum H1</h1>
+                <p class="text" id="p1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p class="text" id="p2">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p class="text" id="p3">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            
+                <h2 class="header h2-header" id="header2">Lorem Ipsum H2</h2>
+                <p class="text" id="p4">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                <p class="text" id="p5">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p class="text" id="p6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            
+                <h2 class="header h2-header" id="new">Lorem Ipsum H2 con ID "new"</h2>
+                <p class="text" id="p7">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p class="text" id="p8">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+                <p class="text" id="p9">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+            
+                <h3 class="header h3-header" id="header3">Lorem Ipsum H3</h3>
+                <p class="text" id="p10">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+                <p class="text" id="p11">Nisi ut aliquid ex ea commodi consequatur?</p>
+                <p class="text" id="p12">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur?</p>
+            
+                <h3 class="header h3-header" id="header4">Lorem Ipsum H3</h3>
+                <p class="text" id="p13">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque.</p>
+                <p class="text" id="p14">Corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+                <p class="text" id="p15">Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+            
+         
+            </div>
+            <div class="col-md-4 text-center">
+
+              <div class="row">
+                <div class="form mb-5">
+                  <input type="text" class="form-control" id="inputAgregar" placeholder="Agregar a la lista">
+                  <a class="btn btn-primary" href="#" id="agregarAlaLista">Agregar</a>
+                </div>
+              </div>
+
+              <ol class="list-group list-group-flush my-5" id="ol-list">
+                  <!-- Lista ordenada vacía -->
+              </ol>
+
+              
+            
+              <div class="d-grid gap-2 mb-5">
+                <a id="changeDetacarEncabezadoPares" class="btn btn-dark">Destacar Pares</a>
+                <a id="changeDestacarEncabezadoImpares" class="btn btn-dark">Destacar Impares</a>
+                <a id="changeAgrandarEncabezados" class="btn btn-dark">Agrandar Destacado</a>
+                <a id="changeAgregarLista" class="btn btn-dark">Agregar Lista</a>
+              </div>
+
+              <img src="https://placehold.jp/150x150.png" alt="Imagen de ejemplo" class="img-fluid mb-4 rounded-circle" id="image1">
+
+            </div>
+        </div>
+
+       
+
+
+    </div>
+
+    <!-- Import JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
