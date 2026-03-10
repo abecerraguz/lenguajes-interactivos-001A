@@ -44,8 +44,8 @@ Esta guía está diseñada para ayudar a principiantes a aprender los conceptos 
 ## Índice
 
 1. Introducción
-   1. [Que es JavaScript](./01-introduccion/01-que-es-javascript.md)
-   2. [Historia de JavaScript](./01-introduccion/02-historia-javascript.md)
+   1. [Que es JavaScript](./complementario/01-introduccion/01-que-es-javascript.md)
+   2. [Historia de JavaScript](./complementario/01-introduccion/02-historia-javascript.md)
 2. Fundamentos
    1. [Variables](./02-fundamentos/01-variables.md)
    2. [Tipos de datos](./02-fundamentos/02-tipos-de-datos.md)
