@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>CV Simulado — Semana 2</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site" role="banner">
+    <div class="avatar" aria-hidden="true">NA</div>
+    <div>
+      <h1>Nombre Apellido</h1>
+      <p class="subtitle">Rol o Especialidad • Ciudad, País</p>
+    </div>
+    <button id="btnPrint" type="button" class="print-btn" aria-label="Imprimir CV" onclick="printCV(this)">🖨 Imprimir</button>
+  </header>
+
+  <!-- Container con max-width:1200px y dos columnas (20% / 80%) -->
+  <main id="contenido" class="container" role="main">
+    <aside aria-label="Información lateral">
+      <section aria-labelledby="contacto">
+        <h2 id="contacto">Contacto</h2>
+        <address>
+          <div>📧 nombre@correo.com</div>
+          <div>📞 +56 9 1234 5678</div>
+          <div>🌐 linkedin.com/in/usuario</div>
+          <div>🏠 Santiago, Chile</div>
+        </address>
+      </section>
+
+      <section aria-labelledby="habilidades">
+        <h2 id="habilidades">Habilidades</h2>
+        <div class="stack">
+          <span class="tag">HTML5</span>
+          <span class="tag">CSS3</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Git</span>
+          <span class="tag">Accesibilidad</span>
+        </div>
+      </section>
+
+      <section aria-labelledby="idiomas">
+        <h2 id="idiomas">Idiomas</h2>
+        <ul>
+          <li>Español — Nativo</li>
+          <li>Inglés — Intermedio (B1)</li>
+        </ul>
+      </section>
+
+      <nav aria-label="Atajos">
+        <h2 class="sr-only">Atajos</h2>
+        <ul>
+          <li><a href="#perfil">Perfil</a></li>
+          <li><a href="#experiencia">Experiencia</a></li>
+          <li><a href="#educacion">Educación</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <div>
+      <section aria-labelledby="perfil" id="perfil">
+        <h2>Perfil</h2>
+        <p>Profesional proactivo con interés en desarrollo web. Experiencia académica creando sitios accesibles y responsivos. En búsqueda de un entorno donde seguir aprendiendo y aportar valor al equipo.</p>
+      </section>
+
+      <section aria-labelledby="experiencia" id="experiencia">
+        <h2>Experiencia</h2>
+        <article>
+          <h3>Puesto / Práctica — Empresa</h3>
+          <p><time datetime="2024-03">Mar 2024</time> — <time datetime="2024-12">Dic 2024</time> · Santiago</p>
+          <ul>
+            <li>Maqueté páginas usando HTML semántico y CSS moderno.</li>
+            <li>Colaboré en la migración de estilos a un sistema responsive.</li>
+            <li>Mejoré el rendimiento optimizando imágenes y CSS.</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Freelance — Portafolio</h3>
+          <p><time datetime="2023-06">Jun 2023</time> — Actualidad</p>
+          <ul>
+            <li>Desarrollo de landing pages con buenas prácticas de SEO on‑page.</li>
+            <li>Automatización simple con JavaScript (formularios y validaciones).</li>
+          </ul>
+        </article>
+      </section>
+
+      <section aria-labelledby="educacion" id="educacion">
+        <h2>Educación</h2>
+        <article>
+          <h3>Técnico en Informática — Instituto</h3>
+          <p><time datetime="2022">2022</time> — <time datetime="2024">2024</time></p>
+          <p>Asignaturas claves: Programación Web, Accesibilidad, UX/UI básico.</p>
+        </article>
+      </section>
+
+      <section aria-labelledby="proyectos" id="proyectos">
+        <h2>Proyectos Destacados</h2>
+        <article>
+          <h3>Blog Accesible (HTML/CSS)</h3>
+          <ul>
+            <li>Estructura semántica con <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code> y <code>&lt;footer&gt;</code>.</li>
+            <li>Score Lighthouse Accesibilidad: 100.</li>
+          </ul>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <footer role="contentinfo">
+    Actualizado: <time datetime="2025-08-26">26 de agosto de 2025</time>
+  </footer>
+
+  <script src="assets/js/scripts.js"></script>
+
+</body>
+</html>
