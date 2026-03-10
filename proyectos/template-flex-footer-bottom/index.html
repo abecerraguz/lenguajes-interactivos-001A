@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            height: 120px;
+            background: coral;
+        }
+        main{
+            background: lightsteelblue;
+        }
+        footer{
+            background: orange;
+            height:180px;
+        }
+        .container{
+            display: grid;
+            min-height: 100dvh;
+            grid-template-rows: auto 1fr auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header></header>
+        <main></main>
+        <footer></footer>
+    </div>
+    
+</body>
+</html>
