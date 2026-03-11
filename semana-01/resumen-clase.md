@@ -21,7 +21,6 @@ JavaScript ofrece distintas formas de mostrar información o interactuar con el 
 alert('Hola Mundo con Javascript');
 confirm('¿Eres mayor de edad?');
 prompt('Ingresa tu edad');
-document.write('Hola Mundo desde fichero externo');
 console.log('Muestra esto en la consola');
 console.log(88 + 4); // → 92
 ```
