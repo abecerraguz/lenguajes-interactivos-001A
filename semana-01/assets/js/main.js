@@ -1,10 +1,10 @@
 // PASO 1 INICIO
-console.log('=============EJEMPLO CONSOLE Y OTROS ===========')
+console.log('=============EJEMPLO CONSOLE Y OTROS ==========')
     alert('Hola Mundo con Javascript');
     alert('Bienvenidos');
     confirm('Eres mayor de edad?');
     prompt('Ingresa tu edad');
-
+    
     // Metodo log se utiliza para Debugger
     console.log('Muestra esto en la consola');
     console.log(88+4);
