@@ -2,7 +2,7 @@
 
 ## Interactuando con JavaScript y los navegadores
 
-Este material fue corregido para quedar **alineado al PDF de la Semana 3**, centrando la clase en **BOM (Browser Object Model)** y dejando **DOM** para la **Semana 4**.
+**Semana 3**, centrando la clase en **BOM (Browser Object Model)** y dejando **DOM** para la **Semana 4**.
 
 ## Enfoque de esta clase
 
