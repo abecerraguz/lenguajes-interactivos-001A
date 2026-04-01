@@ -41,6 +41,10 @@ Optimizando la programación de un sitio web
 3. [Clase semana 03 ver lo visto en el video](./semana-03/resumen-clase.md)
     - [Descargar video clase 03, video parte 1, duración 49 min](https://drive.google.com/file/d/1XwcLKr7DReNIAfTZoL_NJ7XY1mnnLHiW/view?usp=sharing)
     - [Descargar video clase 03, video parte 2, duración 36 min](https://drive.google.com/file/d/1Q66yQa1ZOg9R19w0bsWNxQb9eFBVaUTG/view?usp=sharing)
+4. [Clase semana 04 ver lo visto en el video](./semana-04/resumen-clase.md)
+    - [Descargar video clase 04 video parte 1, duración 45 min](https://drive.google.com/file/d/1Q-yRm6WcIKhQbXPpMf7C8qfsdVMbZwUZ/view?usp=sharing)
+    - [Descargar video clase 04, video parte 2, duración 45 min](https://drive.google.com/file/d/1xmF4R9q8khldfAfNjzQE1LjDUAN1BsBS/view?usp=sharing)
+
 
 
 # Aprendiendo JavaScript material complementario
