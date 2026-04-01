@@ -33,17 +33,17 @@ Optimizando la programación de un sitio web
 | 9    | Sumativa | Individual | 👉 &#124; 40% | martes, 05 de mayo de 2026 | Domingo, 10 de mayo de 2026 |
 
 # Lenguajes Interactivos clase a clase
-1. [Clase semana 01 ver lo visto en el video](./semana-01/resumen-clase.md)
-    - [Descargar video clase 01, duración 1 hora 23 min 45 s](https://drive.google.com/file/d/1JqdlVnX1ZEOid5GoXRH1gG0axvx6JBaJ/view?usp=sharing)
-2. [Clase semana 02 ver lo visto en el video](./semana-02/resumen-clase.md)
-    - [Descargar video clase 02, video parte 1, duración 1 hora 15 min](https://drive.google.com/file/d/1tPTYgSxGfrlbNyc0ZMqXQtSN4gDD8QeP/view?usp=sharing)
-    - [Descargar video clase 02, video parte 2, duración 35 min](https://drive.google.com/file/d/1nULnO3BoL05vbo4soAJO8dFRCRkwT_6k/view?usp=sharing)
-3. [Clase semana 03 ver lo visto en el video](./semana-03/resumen-clase.md)
-    - [Descargar video clase 03, video parte 1, duración 49 min](https://drive.google.com/file/d/1XwcLKr7DReNIAfTZoL_NJ7XY1mnnLHiW/view?usp=sharing)
-    - [Descargar video clase 03, video parte 2, duración 36 min](https://drive.google.com/file/d/1Q66yQa1ZOg9R19w0bsWNxQb9eFBVaUTG/view?usp=sharing)
-4. [Clase semana 04 ver lo visto en el video](./semana-04/resumen-clase.md)
-    - [Descargar video clase 04 video parte 1, duración 45 min](https://drive.google.com/file/d/1Q-yRm6WcIKhQbXPpMf7C8qfsdVMbZwUZ/view?usp=sharing)
-    - [Descargar video clase 04, video parte 2, duración 45 min](https://drive.google.com/file/d/1xmF4R9q8khldfAfNjzQE1LjDUAN1BsBS/view?usp=sharing)
+1. [📕 Clase semana 01 ver lo visto en el video](./semana-01/resumen-clase.md)
+    - [🎥 Descargar video clase 01, duración 1 hora 23 min 45 s](https://drive.google.com/file/d/1JqdlVnX1ZEOid5GoXRH1gG0axvx6JBaJ/view?usp=sharing)
+2. [📕 Clase semana 02 ver lo visto en el video](./semana-02/resumen-clase.md)
+    - [🎥 Descargar video clase 02, video parte 1, duración 1 hora 15 min](https://drive.google.com/file/d/1tPTYgSxGfrlbNyc0ZMqXQtSN4gDD8QeP/view?usp=sharing)
+    - [🎥 Descargar video clase 02, video parte 2, duración 35 min](https://drive.google.com/file/d/1nULnO3BoL05vbo4soAJO8dFRCRkwT_6k/view?usp=sharing)
+3. [📕 Clase semana 03 ver lo visto en el video](./semana-03/resumen-clase.md)
+    - [🎥 Descargar video clase 03, video parte 1, duración 49 min](https://drive.google.com/file/d/1XwcLKr7DReNIAfTZoL_NJ7XY1mnnLHiW/view?usp=sharing)
+    - [🎥 Descargar video clase 03, video parte 2, duración 36 min](https://drive.google.com/file/d/1Q66yQa1ZOg9R19w0bsWNxQb9eFBVaUTG/view?usp=sharing)
+4. [📕 Clase semana 04 ver lo visto en el video](./semana-04/resumen-clase.md)
+    - [🎥 Descargar video clase 04 video parte 1, duración 45 min](https://drive.google.com/file/d/1Q-yRm6WcIKhQbXPpMf7C8qfsdVMbZwUZ/view?usp=sharing)
+    - [🎥 Descargar video clase 04, video parte 2, duración 45 min](https://drive.google.com/file/d/1xmF4R9q8khldfAfNjzQE1LjDUAN1BsBS/view?usp=sharing)
 
 
 
