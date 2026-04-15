@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+// Variables 
+$fondo-body: #ffffff;
+$fondo-chat: #fafafa;
+$fondo-cometario: rgb(239, 243, 247);
+$fondo-button-two:#2c7fb7;
+$fondo-button-two-hover:#80bbe3;
+$fondo-button-one:#ffffff;
+$border-button:#31719c;
+$text-button-one:#2c7fb7;
+$text-button-two:#ffffff;
+$border: #cae9f4;
+$border-left:#dde9ed;
+$border-img: #88b4c3;
+$border-img-avatar: #80bbe3;
+$border-text: #80bbe3;
+$color-text: #3a3a3a;
+$color-text-hover: #000000;
+$border-radius-0: 0;
+$border-radius-5: 5px;
+$border-radius-10:10px;
+$border-radius-15:15px;
+$border-radius-20:20px;
+$fontRoboto:"Roboto Condensed", sans-serif;
+
+:root {
+  font-family: $fontRoboto;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: $color-text;
+  background-color: $fondo-body;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: $color-text;
+  text-decoration: inherit;
+  transition: all ease 0.25s;
+}
+a:hover {
+  color: $color-text-hover;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-height: 100vh;
+  background-color: $fondo-button-two-hover;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 60%;
+  height: auto;
+  overflow: hidden;
+  margin: 2 auto;
+  border-radius: $border-radius-10;
+  background-color: $fondo-chat;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  border-top: 1px solid $border;
+  border-bottom: 1px solid $border;
+  h1{
+    font-family: $fontRoboto;
+    text-align: left;
+    font-size: 2rem;
+    color: $color-text;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 1rem;
+    border-bottom: 1px solid $border;
+    height: 70px;
+    &-logo {
+      display: flex;
+      align-items: center;
+      width: 60px;
+      height: 60px;
+      text-align: center;
+      img{
+        width: 100%;
+        height: auto;
+      }
+    }
+    &-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &-buttonOne {
+        width: 200px;
+        height: 40px;
+        background-color:$fondo-button-one;
+        border: 2px solid $border-button;
+        border-radius: $border-radius-5;
+        margin-right:10px;
+        transition: all ease 0.25s;
+        color: $text-button-one;
+        font-weight:600;
+        font-size: 0.8rem;
+        letter-spacing: 0.03125rem;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        i{
+          font-size: 1.3rem;
+          // margin-top: 4px;
+          margin-right: 5px;
+        }
+        &:hover {
+          background-color:$fondo-button-two;
+          color: $text-button-two;
+        }
+      }
+      &-buttonTwo {
+        width: 200px;
+        height: 40px;
+        background-color:$fondo-button-two;
+        border: 2px solid $border-button;
+        border-radius: $border-radius-5;
+        color: $text-button-two;
+        transition: all ease 0.25s;
+        font-size: 1rem;
+        font-weight: 600;
+        font-size: 0.8rem;
+        letter-spacing: 0.03125rem;
+        text-transform: uppercase;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        i{
+          // margin-top: 4px;
+          margin-right: 5px;
+          font-size: 1.3rem;
+        }
+        &:hover {
+          background-color: $fondo-button-two-hover;
+          color: $text-button-two;
+        }
+      }
+    }
+  }
+  &__comentarios{
+    color: grey;
+    border-top: 1px solid $border;
+    border-bottom: 1px solid $border;
+    padding: 0.5rem 1rem;
+    font-family: $fontRoboto;
+    font-weight: 600;
+    color: $color-text;
+  }
+  &__comentario {
+    width: 100%;
+    height: 40px;
+    background-color:$fondo-button-two;
+    border: 2px solid $border-button;
+    border-radius: $border-radius-5;
+    color: $text-button-two;
+    transition: all ease 0.25s;
+    font-size: 1rem;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.03125rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem 0;
+    i{
+      // margin-top: 4px;
+      margin-right: 5px;
+      font-size: 1.3rem;
+    }
+    &:hover {
+      background-color: $fondo-button-two-hover;
+      color: $text-button-two;
+    }
+  }
+  &__body{
+    width: 100%;
+    padding: 1rem;
+    img{
+      width: 100%;
+      height: auto;
+      // border-radius: 10px;
+      // border: 5px solid $border;
+    }
+
+    
+
+    &-contenedorPadre{
+      display: flex;
+      flex-direction: row;
+      padding: 1rem 0;
+    }
+    &-avatarPadre{
+      width: 10%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      img{
+        width: 60px;
+        height: 60px;
+        border-radius: $border-radius-10;
+        border:3px solid $border-img-avatar;
+        margin-right: 5px;
+      }
+    }
+    &-contentCometarioPadre{
+      width: 90%;
+      height: auto;
+      &-text{
+        background-color:$fondo-cometario;
+        border-radius:$border-radius-5;
+        padding: 18px 15px 18px 25px;
+        margin:0;
+        border: 1px solid $border-left;
+        position: relative;
+      }
+      &-text-name{
+        // background-color:$fondo-cometario;
+        // border-radius:$border-radius-5;
+        // padding: 18px 15px 18px 25px;
+        // margin:0;
+        // border: 1px solid $border-left;
+        // position: relative;
+        color: #2c7fb7;
+        font-weight: 600;
+        display: block;
+      }
+      &-text:after{
+        content:'';
+        position: absolute;
+        height: 2px;
+        width: 20px;
+        background-color:#80bbe3;
+        // border-style: solid;
+        // border-width: 10px 15px 10px 0;
+        // border-color: transparent $border-left transparent transparent;
+        top: 30px;
+        left: -20px;
+      }
+      &-like{
+        width: 100%;
+        display:flex;
+        justify-content: flex-start;
+        margin-top: 1rem;
+        border-bottom: 1px solid lightgrey;
+        padding-bottom: 0.8rem;
+        small{
+          height: 20px;
+          display: flex;
+          justify-content:flex-start;
+          align-items: center;
+          span{
+            margin-right: 20px;
+            margin-left: 5px;
+          }
+          span.textNum{
+            margin-right: 20px;
+            margin-left: 5px;
+            font-weight: 600;
+          }
+         font-weight: 600;
+          }
+          img{
+            width: 100%;
+            height: 100%;
+          }
+        }
+        small.textTime{
+          margin-right: 20px;
+          margin-left: 5px;
+          color: #989898;
+      }
+    }
+  }
+}
+
+#modalComentarios{
+  width: 100%;
+  height: auto;
+  #formulario{
+    .button{
+      width: 100%;
+      height: 40px;
+      background-color:$fondo-button-two;
+      border: 2px solid $border-button;
+      border-radius: $border-radius-5;
+      color: $text-button-two;
+      transition: all ease 0.25s;
+      font-size: 1rem;
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 0.03125rem;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0.5rem 0;
+      i{
+        // margin-top: 4px;
+        margin-right: 5px;
+        font-size: 1.3rem;
+      }
+      &:hover {
+        background-color: $fondo-button-two-hover;
+        color: $text-button-two;
+      }
+    }
+  }
+}
+
+.buttonMostrarMas{
+  width: 90%;
+  height: 40px;
+  background-color:$fondo-button-two;
+  border: 2px solid $border-button;
+  border-radius: $border-radius-5;
+  color: $text-button-two;
+  transition: all ease 0.25s;
+  font-size: 1rem;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.03125rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  margin: 1rem auto;
+  &:hover{
+    background-color: $fondo-button-two-hover;
+    color: $text-button-two;
+  }
+}
+
+
+
