@@ -48,6 +48,9 @@ Optimizando la programación de un sitio web
     - [🎥 Ver video clase 05 , duración 1 hora 26 min](https://us-lti.bbcollab.com/recording/8eed0740236a4c3b8f81185e6280886b)
 6. [📕 Clase semana 06 ver lo visto en el video](./semana-06/resumen-clase.md)
     - [🎥 Ver video clase 06 , duración 1 hora 11 min](https://drive.google.com/file/d/1y_WaQHAzP2-yM07mSo_MSBVOxxAY8ghM/view?usp=sharing)
+7. [📕 Clase semana 07 ver lo visto en el video](./semana-07/resumen-clase.md)
+    - [🎥 Ver video clase 07 , duración 45 min](https://drive.google.com/file/d/1oHoqjKA0FgVZjZcATJlUU4o32RJRSwkC/view)
+
 
 
 # Aprendiendo JavaScript material complementario

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Aprendiendo Jquery - Alejandro Becerra</title>
+	<!-- Integro css Bootstrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+
+	<div class="container my-5">
+
+	   <h2 class="display-5 fw-bold my-3">Efectos Jquery - Alejandro Becerra</h2>
+	   <hr>
+
+	   <div class="row">
+	   	<div class="col-md-12">
+			<button type="button" class="btn btn-danger ocultar" id="mostrarOcultar">Mostrar</button>
+			<button type="button" class="btn btn-danger" id="animarCaja">Animar</button>
+	   	</div>
+	   </div>
+
+	   <div class="row">
+	   	<div class="col-md-12">
+
+			<div class="card my-3" id="cajaCard">
+				<h5 class="card-header">Jquery</h5>
+				<div class="card-body">
+					<h5 class="card-title">Utilizaremos show() y hide()</h5>
+					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+					<a href="#" class="btn btn-primary">Go somewhere</a>
+				</div>
+			</div>
+
+	   	</div>
+	   </div>
+
+		<div class="row">
+
+			<div class="col-md-4" id="cajaAnimar">
+			<div class="card my-3">
+				<h5 class="card-header">Animar con Jquery</h5>
+				<div class="card-body">
+					<h5 class="card-title">Utilizaremos show() y hide()</h5>
+					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+					<a href="#" class="btn btn-primary">Go somewhere</a>
+				</div>
+			</div>
+			</div>
+
+		</div>
+
+	
+	</div>
+
+
+<!-- jQuery 4.0.0 CDN - ACTUALIZADO desde v3.7.1
+     Cambios en v4.0: se eliminaron los métodos abreviados de eventos (.click, .change, etc.)
+     y $(document).ready() en favor de $(fn). Más info: https://jquery.com/upgrade-guide/4.0/ -->
+<script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+<script src="js/05-efectos-jquery.js"></script>
+    
+</body>
+</html>

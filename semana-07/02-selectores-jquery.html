@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Aprendiendo Jquery - Alejandro Becerra</title>
+	<!-- Integro css Bootstrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/main.css">
+	
+	<style>
+		.zebra{
+			border:5px dashed black;
+			padding: 10px;
+		}
+		.grande{
+			font-size: 30px;
+		}
+
+		.margen-superior{
+			display: block;
+			/* margin-top: 45px; */
+			margin: 60px 20px;
+	
+		}
+
+		.resaltado{
+			border-bottom: 1px solid green;
+		}
+	</style>
+
+</head>
+<body>
+
+	<div class="container my-5">
+
+	   <h1 class="display-5 fw-bold">Selectores Jquery - Alejandro Becerra</h1>
+
+	   <hr class="py-2">
+	   
+	   <h3 class="display-5 fw-bold">Selector ID y Clases</h3>
+	   <hr class="py-2">
+	   <p id="rojo" class="sin-borde">Ejercicios de Jquery</p>
+	   <p id="amarillo" class="zebra">Practicando con Selectores</p>
+	   <p id="verde" class="sin-borde">Quiero ser un parrafo Verde</p>
+	   <p class="zebra">Soy un Parrafo Blanco</p>
+		
+	   <h3 class="display-5 fw-bold py-3">Selector Por Atributo [ ]</h3>
+	   <hr class="py-3">
+	   <ul>
+	   	<li><a href="http:https://www.google.com/" title="Google">Google</a></li>
+	   	<li><a href="https://www.facebook.com/" title="Facebook">Facebook</a></li>
+	   </ul>
+
+	   <!-- Metodo Find -->
+	   <div id="caja">
+			<p>Hola Soy una Caja</p>
+			<ul>
+				<li>Elemento 1</li>
+				<li id="elemento2">Elemento 2</li>
+			</ul>
+			<span class="resaltado">Texto Resaltado</span>
+			<span class="resaltado gato">Texto Resaltado</span>
+	   </div>
+
+
+	</div>
+
+
+<!-- jQuery 4.0.0 CDN - ACTUALIZADO desde v3.7.1
+     Cambios en v4.0: se eliminaron los métodos abreviados de eventos (.click, .change, etc.)
+     y $(document).ready() en favor de $(fn). Más info: https://jquery.com/upgrade-guide/4.0/ -->
+<script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+<script src="js/02-selector-jquery.js"></script>
+    
+</body>
+</html>

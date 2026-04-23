@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+   font-family: "Roboto Condensed", sans-serif;
+}
+
+
+
+.formulario{
+    display: flex;
+}
+
+.formulario button{
+    margin-left: 10px;
+}
+
+.tag{
+    background: #69a14a;
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 10px;
+    margin: 6px 3px;
+    font-size: 0.8rem;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.list-group-item.active {
+    z-index: 2;
+    color: #fff;
+    background-color: #4a8347;
+    border-color: #4a8347;
+}
+
+li#dataInfo {
+    height: auto;
+    max-height: 315px;
+    overflow-y: scroll;
+}
