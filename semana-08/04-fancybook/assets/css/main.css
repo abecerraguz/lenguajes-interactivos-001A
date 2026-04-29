@@ -1,0 +1,42 @@
+ /* =============================================
+       ESTILOS PROPIOS
+       IMPORTANTE: No sobreescribir clases de Bootstrap
+       directamente (como .img-fluid). En su lugar,
+       creamos una clase propia: .gallery-img
+       ============================================= */
+
+    body {
+      background-color: #f0f2f5;
+    }
+
+    .page-header {
+      padding: 50px 0 10px;
+    }
+
+    .page-header p {
+      color: #6c757d;
+    }
+
+    /* Clase propia para las miniaturas de la galería */
+    .gallery-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;    /* Escala y recorta sin distorsionar la imagen */
+      display: block;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    /* Contenedor del enlace: aplica overflow:hidden para que
+       el zoom de la imagen no desborde el borde redondeado */
+    .gallery-item {
+      display: block;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    /* Efecto hover: zoom suave sobre la miniatura */
+    .gallery-item:hover .gallery-img {
+      transform: scale(1.06);
+      opacity: 0.88;
+    }
