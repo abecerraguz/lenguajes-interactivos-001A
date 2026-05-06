@@ -50,6 +50,10 @@ Optimizando la programación de un sitio web
     - [🎥 Ver video clase 06 , duración 1 hora 11 min](https://drive.google.com/file/d/1y_WaQHAzP2-yM07mSo_MSBVOxxAY8ghM/view?usp=sharing)
 7. [📕 Clase semana 07 ver lo visto en el video](./semana-07/resumen-clase.md)
     - [🎥 Ver video clase 07 , duración 45 min](https://drive.google.com/file/d/1oHoqjKA0FgVZjZcATJlUU4o32RJRSwkC/view)
+8. [📕 Clase semana 08 ver lo visto en el video](./semana-08/resumen-clase.md)
+    - [🎥 Ver video clase 08 , duración 1 hora 18 min](https://us-lti.bbcollab.com/recording/924733d41a31412ea52080802f37c2dd)
+9. [📕 Clase semana 09 Examen Transversal ver lo visto en el video](./semana-09/resumen-clase.md)
+    - [🎥 Ver video clase 09 , duración 1 hora 18 min](https://us-lti.bbcollab.com/recording/924733d41a31412ea52080802f37c2dd)
 
 
 
