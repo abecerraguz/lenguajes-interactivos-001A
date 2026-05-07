@@ -6,6 +6,7 @@ encabezados = document.querySelectorAll('.header'),
 inputAgregar = document.getElementById('inputAgregar'),
 agregarAlaLista = document.getElementById('agregarAlaLista'),
 lista = document.getElementById('ol-list'),
+
 iconUniversal = document.querySelector('#iconUniversal'),
 contentAccesoUniversal = document.querySelector('.accesoUniversal'),
 iconThemeToggle = document.querySelector('#themeToggle'),

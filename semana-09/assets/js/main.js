@@ -21,6 +21,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     DOM.changeColor.addEventListener('click', cambiarColor )
     DOM.changeFont.addEventListener('click', cambiarFont )
     DOM.agregarAlaLista.addEventListener('click', addList )
+    
     DOM.iconUniversal.addEventListener('click', toggleClassIconUniversal)
     DOM.iconThemeToggle.addEventListener('click', toggleClassTheme )
     DOM.buttonIncreaseText.addEventListener('click',() => increaseBtn(fontSizes) )

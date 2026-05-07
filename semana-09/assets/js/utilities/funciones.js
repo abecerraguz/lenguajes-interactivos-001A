@@ -72,45 +72,83 @@ function cambiarFont(e) {
 // FUNCIÓN: addList
 // ─────────────────────────────────────────────────────────────────────────────
 // Agrega un nuevo elemento <li> a la lista del DOM.
-// Antes de agregar, valida que:
-//   1. El campo de texto no esté vacío.
-//   2. El elemento no exista ya en la lista (evita duplicados).
+// Antes de agregar, valida que el campo de texto no esté vacío.
+// Si está vacío, muestra una alerta visual de Bootstrap.
+// Si tiene contenido, crea el <li> con un ícono de eliminación y lo añade a la lista.
 //
 // Parámetro:
-//   e → el evento del formulario o botón
+//   e → el evento del formulario o botón (evitamos el comportamiento por defecto)
 // ─────────────────────────────────────────────────────────────────────────────
 function addList(e) {
+    // Cancelamos el comportamiento por defecto (evitar recargar la página en un form)
     e.preventDefault();
 
-    // Validación 1: el input no puede estar vacío
-    if (DOM.inputAgregar.value.length === 0) {
-        alert('Debes agregar un lenguaje de programación')
-    }
+    // Obtenemos el valor actual del input de texto
+    const dataInput = DOM.inputAgregar.value
 
-    // Validación 2: verificar si el elemento ya existe en la lista
-    // querySelectorAll('li') devuelve todos los <li> dentro de DOM.lista
-    const items = DOM.lista.querySelectorAll('li');
+    // ── Validación: campo vacío ──────────────────────────────────────────────
+    // Si el input está vacío o solo tiene espacios, mostramos una alerta
+    if (!dataInput || dataInput.length === 0) {
 
-    for (let item of items) {
-        console.log('Salida de item-->', item)
+        // Verificamos que la alerta no exista ya para no duplicarla
+        if (!document.getElementById('alertaId')) {
+            // Creamos el <div> de alerta con clases de Bootstrap
+            const alert = document.createElement('div');
+            alert.classList.add('alert', 'alert-danger', 'alert-fade-in');
+            alert.setAttribute('role', 'alert');
+            alert.setAttribute('id', 'alertaId');
+            alert.innerText = `Debe ingresar un lenguaje de programación`;
 
-        // Comparamos en minúsculas para que la búsqueda no sea sensible a mayúsculas
-        // Ej: "JavaScript" y "javascript" se consideran el mismo elemento
-        if (item.innerText.toLowerCase() === DOM.inputAgregar.value.toLowerCase()) {
-            alert('la palabra ya fue agregada a la lista')
-            DOM.inputAgregar.value = ''
-            return; // Salimos de la función sin agregar
+            // Insertamos la alerta justo antes de la lista en el DOM
+            DOM.lista.before(alert);
         }
+
+        // Salimos de la función sin agregar nada
+        return
     }
 
-    // Si pasó las validaciones → creamos el nuevo elemento <li>
-    const elementList = document.createElement('li')       // Creamos la etiqueta <li>
-    elementList.classList.add('list-group-item')           // Le agregamos la clase de Bootstrap
-    elementList.innerText = DOM.inputAgregar.value         // Le ponemos el texto del input
-    DOM.lista.appendChild(elementList);                    // Lo agregamos al final de la lista en el HTML
+    // ── Creación del elemento <li> ───────────────────────────────────────────
+    // Creamos el nuevo ítem de lista
+    const li = document.createElement('li')
 
-    // Limpiamos el input para que quede listo para el próximo ingreso
+    // Agregamos clases de Bootstrap para estilo y disposición (flex)
+    li.classList.add('list-group-item', 'd-flex', 'justify-content-between')
+
+    // Insertamos el texto del input y un ícono rojo de "X" para eliminar
+    li.innerHTML = `${dataInput} <i class="bi bi-x-circle text-danger"></i>`
+
+    // Indicamos visualmente que el ítem es clickeable
+    li.style.cursor = 'pointer';
+
+    // Agregamos el <li> al final de la lista en el DOM
+    DOM.lista.append(li)
+
+    // Limpiamos el input para que quede listo para el siguiente ingreso
     DOM.inputAgregar.value = ''
+
+    // ── Evento de eliminación ────────────────────────────────────────────────
+    // Seleccionamos todos los <li> actuales de la lista
+    const elementList = document.querySelectorAll('#ol-list li');
+
+    // Si hay elementos, les asignamos el evento de clic para eliminarse a sí mismos
+    if (elementList.length !== 0) {
+        elementList.forEach(element => {
+            element.addEventListener('click', function (e) {
+                // 'this' apunta al <li> clickeado → lo removemos del DOM
+                this.remove()
+            })
+        })
+    }
+
+}
+
+function eliminarAlert(e) {
+    const alertEl = document.getElementById('alertaId');
+    if (!alertEl) return;
+
+    alertEl.classList.remove('alert-fade-in');
+    alertEl.classList.add('alert-fade-out');
+    alertEl.addEventListener('animationend', () => alertEl.remove(), { once: true });
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -376,9 +414,7 @@ function leerContenido() {
 
     // onend es un evento que se dispara automáticamente cuando termina de leer todo el texto
     declaracion.onend = () => {
-        // Quitamos cualquier ícono de estado intermedio (pausa o play)
         DOM.listenIcon.classList.remove('bi-pause', 'bi-play');
-        // Restauramos el ícono original de altavoz → listo para una nueva lectura
         DOM.listenIcon.classList.add('bi-volume-up');
         console.log('Lectura finalizada');
     };

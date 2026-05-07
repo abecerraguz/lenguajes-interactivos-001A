@@ -123,37 +123,59 @@ element.style.fontFamily = '';                    // desactiva
 
 ### 3. `addList(e)` — Agregar elementos a una lista
 
-**Conceptos clave:** validación de input, búsqueda de duplicados, creación dinámica de nodos.
+**Conceptos clave:** validación de input, creación dinámica de nodos, alerta Bootstrap, eventos delegados.
 
 ```js
 function addList(e) {
     e.preventDefault();
 
-    // Validación: no agregar si el input está vacío
-    if (DOM.inputAgregar.value.length === 0) { ... }
+    const dataInput = DOM.inputAgregar.value;
 
-    // Búsqueda de duplicados (case-insensitive)
-    const items = DOM.lista.querySelectorAll('li');
-    for (let item of items) {
-        if (item.innerText.toLowerCase() === DOM.inputAgregar.value.toLowerCase()) {
-            return; // salimos sin agregar
+    // Validación: no agregar si el input está vacío
+    if (!dataInput || dataInput.length === 0) {
+
+        // Evitamos duplicar la alerta verificando si ya existe por su id
+        if (!document.getElementById('alertaId')) {
+            const alert = document.createElement('div');
+            alert.classList.add('alert', 'alert-danger', 'alert-fade-in');
+            alert.setAttribute('role', 'alert');
+            alert.setAttribute('id', 'alertaId');
+            alert.innerText = `Debe ingresar un lenguaje de programación`;
+            DOM.lista.before(alert); // inserta la alerta justo antes de la lista
         }
+        return;
     }
 
-    // Crear y agregar el <li> al DOM
-    const elementList = document.createElement('li')
-    elementList.classList.add('list-group-item')
-    elementList.innerText = DOM.inputAgregar.value
-    DOM.lista.appendChild(elementList);
+    // Crear el <li> con clases Bootstrap y un ícono de eliminación
+    const li = document.createElement('li');
+    li.classList.add('list-group-item', 'd-flex', 'justify-content-between');
+    li.innerHTML = `${dataInput} <i class="bi bi-x-circle text-danger"></i>`;
+    li.style.cursor = 'pointer';
+
+    DOM.lista.append(li);       // agrega el <li> al final de la lista
+    DOM.inputAgregar.value = '' // limpia el input
+
+    // Asigna evento de clic a todos los <li> para que se eliminen al hacer clic
+    const elementList = document.querySelectorAll('#ol-list li');
+    if (elementList.length !== 0) {
+        elementList.forEach(element => {
+            element.addEventListener('click', function (e) {
+                this.remove(); // 'this' apunta al <li> clickeado
+            });
+        });
+    }
 }
 ```
 
-| Método | Qué hace |
+| Método / Concepto | Qué hace |
 |---|---|
 | `document.createElement('li')` | Crea un nuevo nodo `<li>` en memoria (aún no está en el HTML) |
-| `classList.add()` | Agrega una clase CSS al elemento |
-| `appendChild()` | Inserta el elemento al final del contenedor |
-| `.toLowerCase()` | Convierte a minúsculas para comparar sin distinguir mayúsculas |
+| `classList.add()` | Agrega clases CSS al elemento (acepta múltiples clases) |
+| `li.innerHTML` | Permite insertar HTML con texto + ícono Bootstrap Icons (`<i>`) |
+| `DOM.lista.before(alert)` | Inserta la alerta justo antes del elemento `DOM.lista` en el DOM |
+| `DOM.lista.append(li)` | Inserta el `<li>` al final del contenedor de la lista |
+| `this.remove()` | Dentro del `addEventListener`, `this` es el `<li>` clickeado: se elimina a sí mismo |
+| `document.getElementById('alertaId')` | Verifica si la alerta ya existe para no duplicarla |
 
 ---
 
@@ -333,7 +355,8 @@ function leerContenido() {
 | **`addEventListener`** | `main.js` — conexión de eventos |
 | **Patrón Toggle** (booleano `!`) | `cambiarColor`, `cambiarFont` |
 | **`forEach`** | Recorrer `NodeList` y `Map` |
-| **`createElement` / `appendChild`** | `addList` |
+| **`createElement` / `append` / `before`** | `addList` — crear `<li>` e insertar alerta |
+| **`innerHTML`** | `addList` — insertar texto + ícono Bootstrap Icons |
 | **`classList`** (toggle, add, remove, replace) | `toggleClassIconUniversal`, `toggleClassTheme`, `increaseBtn`, `decreaseBtn` |
 | **`getComputedStyle`** | `initializeFontSizeControl` |
 | **`Map`** | `initializeFontSizeControl`, `increaseBtn`, `decreaseBtn` |
