@@ -33,11 +33,28 @@ Optimizando la programación de un sitio web
 | 9    | Sumativa | Individual | 👉 &#124; 40% | martes, 05 de mayo de 2026 | Domingo, 10 de mayo de 2026 |
 
 # Lenguajes Interactivos clase a clase
-1. [📕 Clase semana 01 ver lo visto en el video](./semana-01/resumen-clase.md)
-    - [🎥 Descargar video clase 01, duración 1 hora 23 min 45 s](https://drive.google.com/file/d/1JqdlVnX1ZEOid5GoXRH1gG0axvx6JBaJ/view?usp=sharing)
-2. [📕 Clase semana 02 ver lo visto en el video](./semana-02/resumen-clase.md)
-    - [🎥 Descargar video clase 02, video parte 1, duración 1 hora 15 min](https://drive.google.com/file/d/1tPTYgSxGfrlbNyc0ZMqXQtSN4gDD8QeP/view?usp=sharing)
-    - [🎥 Descargar video clase 02, video parte 2, duración 35 min](https://drive.google.com/file/d/1nULnO3BoL05vbo4soAJO8dFRCRkwT_6k/view?usp=sharing)
+## Índice
+1. Experiencia de aprendizaje 1: Estableciendo las bases para trabajar con Javascript
+   - [📕 Semana 01 : Identificando los elementos básicos para trabajar con JavaScript, ver resumen de la semana](./semana-01/resumen-clase.md)
+      - [🎥 Semana 01 : Descargar video complementario, duración 1 hora 23 min 45 s](https://drive.google.com/file/d/1JqdlVnX1ZEOid5GoXRH1gG0axvx6JBaJ/view?usp=sharing)
+   - [📕 Semana 02 : Profundizando en el control de JavaScript, ver resumen de la semana](./semana-02/resumen-clase.md)
+      - [🎥 Semana 02 : Descargar video complementario, video parte 1, duración 1 hora 15 min](https://drive.google.com/file/d/1tPTYgSxGfrlbNyc0ZMqXQtSN4gDD8QeP/view?usp=sharing)
+      - [🎥 Semana 02 : Descargar video complementario, video parte 2, duración 35 min](https://drive.google.com/file/d/1nULnO3BoL05vbo4soAJO8dFRCRkwT_6k/view?usp=sharing)
+
+2. Experiencia de aprendizaje 2: Aplicando JavaScript para intervenir los elementos del DOM
+   - [📕 Semana 03 : Interactuando con JavaScript y los navegadores, ver resumen de la semana](./semana-03/resumen-clase.md)
+      - [🎥 Semana 03 : Descargar video complementario, video parte 1, duración 49 min](https://drive.google.com/file/d/1XwcLKr7DReNIAfTZoL_NJ7XY1mnnLHiW/view?usp=sharing)
+      - [🎥 Semana 03 : Descargar video complementario, video parte 2,, duración 36 min](https://drive.google.com/file/d/1Q66yQa1ZOg9R19w0bsWNxQb9eFBVaUTG/view?usp=sharing)
+   - [📕 Semana 04 : Manipulando el DOM, ver resumen de la semana](./semana-04/resumen-clase.md)
+      - [🎥 Semana 04 : Descargar video complementario,  duración 45 min](https://drive.google.com/file/d/1Q-yRm6WcIKhQbXPpMf7C8qfsdVMbZwUZ/view?usp=sharing)
+      - [🎥 Semana 04 : Descargar video complementario, duración 45 min](https://drive.google.com/file/d/1xmF4R9q8khldfAfNjzQE1LjDUAN1BsBS/view?usp=sharing)
+   - [📕 Semana 05 : Mejorando la usabilidad del sitio con JS, ver resumen de la semana](./semana-05/resumen-clase.md)
+      - [🎥 Semana 05 : Descargar video complementario, duración 1 hora 26 min](https://us-lti.bbcollab.com/recording/8eed0740236a4c3b8f81185e6280886b)
+   - [📕 Semana 06 : Modificando el contenido de una página con JS, ver resumen de la semana](./semana-06/resumen-clase.md)
+      - [🎥 Semana 05 : Descargar video complementario, duración 1 hora 11 min](https://drive.google.com/file/d/1y_WaQHAzP2-yM07mSo_MSBVOxxAY8ghM/view?usp=sharing)
+
+<!--
+
 3. [📕 Clase semana 03 ver lo visto en el video](./semana-03/resumen-clase.md)
     - [🎥 Descargar video clase 03, video parte 1, duración 49 min](https://drive.google.com/file/d/1XwcLKr7DReNIAfTZoL_NJ7XY1mnnLHiW/view?usp=sharing)
     - [🎥 Descargar video clase 03, video parte 2, duración 36 min](https://drive.google.com/file/d/1Q66yQa1ZOg9R19w0bsWNxQb9eFBVaUTG/view?usp=sharing)
@@ -55,9 +72,14 @@ Optimizando la programación de un sitio web
 9. [📕 Clase semana 09 Examen Transversal ver lo visto en el video](./semana-09/resumen-clase.md)
     - [🎥 Ver video clase 09 , duración 1 hora 56 min](https://us-lti.bbcollab.com/recording/b3353de7aa4748559cb22d033a043640)
 
+-->
 
 
-# Aprendiendo JavaScript material complementario
+
+
+
+
+## Aprendiendo JavaScript material complementario
 
 Guía completa para aprender JavaScript desde cero.
 

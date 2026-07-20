@@ -1,7 +1,11 @@
-# Resumen de Clase — Semana 01: Fundamentos de JavaScript
+![Infografía](material-clase/infografia.png)
+
+# Semana 01: Fundamentos de JavaScript
 
 **Duración:** 45 minutos  
 **Archivo de trabajo:** `assets/js/main.js`
+
+[Descargar presentación](material-clase/presentacion.pdf)
 
 ---
 
