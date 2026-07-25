@@ -1,233 +1,370 @@
 ![Infografía](material-clase/infografia.png)
+# Semana 1 – Identificando los elementos básicos para trabajar con JavaScript
 
-# Semana 01: Fundamentos de JavaScript
-
-**Duración:** 45 minutos  
-**Archivo de trabajo:** `assets/js/main.js`
-
-[Descargar presentación](material-clase/presentacion.pdf)
+> **Carrera:** Desarrollo y Diseño Web | **Asignatura:** Lenguajes Interactivos
+> **Experiencia:** 1 – Semana 1
 
 ---
 
-## 1. Salidas básicas en JavaScript
+## Introducción
 
-JavaScript ofrece distintas formas de mostrar información o interactuar con el usuario:
+En el mundo de la programación web, JavaScript es una de las herramientas esenciales para dar vida a aplicaciones interactivas y dinámicas. Es un lenguaje **de alto nivel**, diseñado para ser comprensible y legible por los humanos, en contraste con los lenguajes de bajo nivel que están más cerca de la representación de la máquina.
+
+JavaScript se ejecuta en el navegador web del usuario. Su propósito principal es mejorar la experiencia del usuario, permitiendo la interacción en tiempo real y la manipulación de contenido sin necesidad de recargar la página. También es la base de frameworks como React y Angular.
+
+[Descargar presentación](material-clase/presentacion.pdf)
+---
+
+## Resultado de aprendizaje
+
+**RA1.** Utiliza elementos básicos de programación en JavaScript en sitio web, de acuerdo con los criterios de usabilidad, accesibilidad y requerimientos del proyecto.
+
+### Indicadores de logro
+
+| Código | Descripción |
+|--------|-------------|
+| **IL1** | Utiliza correctamente variables, arrays, operadores (`if - else`) y bucles para dar solución a los requerimientos del proyecto. |
+| **IL2** | Utiliza JavaScript para programar funciones que permiten reutilizar código de manera eficiente. |
+
+---
+
+## Conceptos relevantes
+
+| Variables | Tipos de datos | Funciones | Condicionales | Objetos |
+|-----------|---------------|-----------|--------------|---------|
+
+---
+
+## Preguntas activadoras
+
+- ¿Te gustaría hacer tu propia aplicación web desde cero?
+- ¿Quieres crear sitios web dinámicos e interactivos?
+- ¿Has pensado en tener una carrera versátil en desarrollo web?
+
+---
+
+## Actividad formativa
+
+Aplicar conocimientos de variables, operadores condicionales y funciones para resolver dos ejercicios prácticos:
+1. Uso de **condicionales**.
+2. Uso de **funciones**.
+
+---
+
+## Comenzando a trabajar con JavaScript
+
+El código JavaScript puede insertarse en un documento HTML de dos maneras:
+
+### Incrustado directamente (entre etiquetas `<script>`)
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Página Web</title>
+</head>
+<body>
+  <p>Contenido de la página.</p>
+  <script>
+    // Tu código de JavaScript aquí
+    alert("¡Hola mundo!");
+  </script>
+</body>
+</html>
+```
+
+### Enlazado externamente (archivo `.js` separado)
+
+```html
+<body>
+  <p>Contenido de la página.</p>
+  <script src="mi-script.js"></script>
+</body>
+```
+
+> **Buena práctica:** colocar la etiqueta `<script>` al final del `<body>` para que el navegador cargue y muestre el HTML antes de ejecutar el JavaScript.
+
+---
+
+## Escribir en la consola
+
+La consola permite imprimir mensajes y ver valores de variables, errores y datos en tiempo de ejecución. Se accede a través del objeto `console`.
+
+### Métodos más comunes
 
 | Método | Descripción |
 |--------|-------------|
-| `alert('mensaje')` | Muestra una ventana emergente con un mensaje |
-| `confirm('pregunta')` | Muestra una ventana con Aceptar/Cancelar. Retorna `true` o `false` |
-| `prompt('pregunta')` | Solicita un dato al usuario. Siempre retorna un `string` |
-| `document.write('texto')` | Escribe directamente en el HTML (solo uso didáctico) |
-| `console.log('mensaje')` | Muestra información en la consola del navegador (para depuración) |
+| `console.log()` | Muestra un mensaje o valor en la consola |
+| `console.warn()` | Muestra un mensaje de advertencia |
+| `console.error()` | Muestra un mensaje de error |
+| `console.info()` | Muestra un mensaje informativo |
+| `console.table()` | Muestra datos en formato tabla |
+| `console.group()` / `groupEnd()` | Agrupa mensajes relacionados |
 
-```javascript
-alert('Hola Mundo con Javascript');
-confirm('¿Eres mayor de edad?');
-prompt('Ingresa tu edad');
-console.log('Muestra esto en la consola');
-console.log(88 + 4); // → 92
+```js
+let nombre = "Juan";
+let edad = 30;
+
+console.log("nombre:", nombre);
+console.log("Edad:", edad);
 ```
+
+### Cómo abrir la consola en Chrome
+
+- **Opción 1:** `Ctrl + Shift + J` (Windows) o `Cmd + Option + J` (Mac)
+- **Opción 2:** Clic derecho → **Inspeccionar** → pestaña **Consola**
 
 ---
 
-## 2. Variables
+## Alertas
 
-Las variables son contenedores con nombre para almacenar datos. En JavaScript moderno se declaran con `let`.
+Las alertas son ventanas emergentes que muestran mensajes o notificaciones al usuario.
 
-```javascript
-let pais       = "Chile";
-let continente = "Latino America";
-let antiguedad = 1810;
-
-// Concatenación de strings con el operador +
-let pais_y_continente = pais + ' ' + continente; // "Chile Latino America"
-
-// Reasignación de variables
-pais = "España";
-continente = "Europa";
-
-// pais_y_continente sigue siendo "Chile Latino America"
-// porque se calculó en el momento de la asignación
-console.log(pais, continente, antiguedad, pais_y_continente);
+```js
+alert("Mensaje de la alerta");
 ```
 
-> **Clave:** Al reasignar `pais`, las variables que ya usaron su valor anterior **no se actualizan** automáticamente.
+### Usos principales
+
+- **Notificar** al usuario sobre situaciones importantes.
+- **Solicitar confirmación** antes de realizar una acción crítica.
+- **Mostrar mensajes de error** o advertencia.
+- **Proporcionar información adicional** sobre una característica del sitio.
 
 ---
 
-## 3. Ámbito de variables: `var` vs `let`
+## Comentarios
 
-El **ámbito** (scope) define en qué parte del código una variable es accesible.
+Los comentarios son anotaciones en el código que no afectan su ejecución.
 
-### `var` — Ámbito de función (function scope) ⚠️
+### Comentario de una línea
 
-```javascript
-var texto1 = "Curso de Javascript";
-{
-    var texto1 = "Curso de Laravel 5"; // sobreescribe la variable exterior
+```js
+// Este es un comentario de una línea
+```
+
+### Comentario de múltiples líneas
+
+```js
+/*
+  Este es un comentario de múltiples líneas.
+  Puede abarcar varias líneas y es útil para
+  explicar secciones de código más extensas.
+*/
+```
+
+> Los comentarios son una buena práctica para hacer el código más legible y comprensible.
+
+---
+
+## Variables
+
+Las variables son contenedores para almacenar datos (números, cadenas de texto, objetos, etc.). Se declaran con `var`, `let` o `const`.
+
+### Diferencias clave: `var`, `let` y `const`
+
+| Característica | `var` | `let` | `const` |
+|---------------|-------|-------|---------|
+| Ámbito | Función | Bloque | Bloque |
+| Reasignable | Sí | Sí | No |
+| Uso recomendado | No (código legacy) | Sí | Sí (valores fijos) |
+
+### Declaración con `var` (ámbito de función)
+
+```js
+var edad = 25;
+```
+
+> **Importante:** `25` (número) es distinto de `'25'` (cadena de texto).
+
+### Declaración con `let` (ámbito de bloque)
+
+```js
+let nombre = "juan";
+// Puede ser reasignada
+nombre = "Pedro";
+```
+
+### Declaración con `const` (inmutable)
+
+```js
+const PI = 3.1416;
+// No puede ser reasignada después de su declaración
+```
+
+> La elección entre `var`, `let` o `const` depende del ámbito y de si se planea reasignar el valor.
+
+---
+
+## Tipos de datos
+
+JavaScript es un lenguaje con **tipado dinámico**: las variables pueden cambiar de tipo durante la ejecución.
+
+| Tipo | Descripción | Ejemplo |
+|------|-------------|---------|
+| **Number** | Valores numéricos (enteros o decimales) | `44`, `3.14` |
+| **String** | Cadenas de texto | `"Hola"` |
+| **Boolean** | Verdadero o falso | `true`, `false` |
+| **null** | Ausencia intencional de un valor | `null` |
+| **Object** | Colección de propiedades y valores | `{ nombre: "Ana" }` |
+| **Array** | Lista ordenada de valores | `[1, 2, 3]` |
+
+---
+
+## Operadores
+
+### Operadores condicionales (`if`, `else if`, `else`)
+
+Permiten que el programa tome decisiones basadas en condiciones:
+
+```js
+var miVariable = 1;
+
+if (miVariable === 1) {
+    console.log(true);  // se ejecuta si miVariable es 1
+} else {
+    console.log(false); // se ejecuta en cualquier otro caso
 }
-console.log(texto1); // → "Curso de Laravel 5"  ← ¡peligroso!
 ```
 
-### `let` — Ámbito de bloque (block scope) ✅
+### Operadores relacionales
 
-```javascript
-let texto2 = "Curso de Javascript";
-{
-    let texto2 = "Curso de Laravel 5"; // variable independiente dentro del bloque
-}
-console.log(texto2); // → "Curso de Javascript"  ← se preservó
-```
-
-> **Regla:** Usar siempre `let` (o `const`). Nunca usar `var`.
-
----
-
-## 4. Tipos de datos y `typeof`
-
-JavaScript tiene tipado dinámico: el tipo se infiere del valor asignado.
-
-| Tipo | Ejemplo | `typeof` retorna |
-|------|---------|-----------------|
-| Número entero | `44` | `"number"` |
-| Número decimal | `33.4` | `"number"` |
-| Cadena de texto | `"Hola"` | `"string"` |
-| Booleano | `true` / `false` | `"boolean"` |
-
-```javascript
-let numero_entero    = 44;
-let cadena_de_texto  = "Hola que tal";
-let booleano         = true;
-let numero_falso     = "33"; // ← es string, no número
-
-console.log(typeof numero_entero);   // "number"
-console.log(typeof cadena_de_texto); // "string"
-console.log(typeof booleano);        // "boolean"
-console.log(typeof numero_falso);    // "string"
-```
-
-### Coerción implícita de tipos ⚠️
-
-```javascript
-let valor = "33.4";
-console.log(valor + 7); // → "33.47"  ← concatena, no suma
-
-// Solución: convertir primero
-console.log(parseFloat(valor) + 7); // → 40.4  ✅
-console.log(Number(valor) + 7);     // → 40.4  ✅
-```
-
----
-
-## 5. Operadores
-
-### Operadores relacionales (de comparación)
-
-| Operador | Significado |
-|----------|-------------|
-| `>`  | Mayor que |
-| `<`  | Menor que |
-| `>=` | Mayor o igual que |
-| `<=` | Menor o igual que |
-| `==` | Igual (con coerción de tipo) |
-| `===`| Igual estricto (valor Y tipo) |
-| `!=` | Distinto |
+| Símbolo | Operador | ¿Qué hace? |
+|---------|----------|-----------|
+| `==` | Igual | Compara valor (con coerción de tipo). `5 == "5"` → `true` |
+| `===` | Igual estricto | Compara valor Y tipo. `5 === "5"` → `false` |
+| `!=` | Distinto | Diferente en valor. `5 != "6"` → `true` |
+| `!==` | Distinto estricto | Diferente en valor o tipo. `5 !== "5"` → `true` |
+| `>` | Mayor que | `10 > 5` → `true` |
+| `<` | Menor que | `5 < 10` → `true` |
+| `>=` | Mayor o igual que | `10 >= 10` → `true` |
+| `<=` | Menor o igual que | `10 <= 10` → `true` |
 
 ### Operadores lógicos
 
-| Operador | Significado | Se cumple cuando... |
-|----------|-------------|---------------------|
-| `&&` | AND (Y) | Ambas condiciones son verdaderas |
-| `\|\|` | OR (O) | Al menos una condición es verdadera |
-| `!`  | NOT (Negación) | Invierte el valor booleano |
+| Operador | Nombre | Se cumple cuando... |
+|----------|--------|---------------------|
+| `&&` | AND | Todas las condiciones son verdaderas |
+| `\|\|` | OR | Al menos una condición es verdadera |
+| `!` | NOT | Niega la condición |
 
-### Condicional `if / else if / else`
+```js
+// AND: ambas condiciones deben ser verdaderas
+if (condicion1 && condicion2) { /* ... */ }
 
-```javascript
-let year = 2025;
+// OR: al menos una debe ser verdadera
+if (condicion1 || condicion2) { /* ... */ }
 
-if (year >= 2000 && year <= 2025) {
-    console.log("Estamos en la era actual");
-} else {
-    console.log("Estamos en la era Post moderna");
+// NOT: se cumple si la condición original es falsa
+if (!condicion) { /* ... */ }
+
+// Combinado
+if ((condicion1 || condicion2) && !(condicion1 && condicion2)) { /* ... */ }
+```
+
+---
+
+## Funciones
+
+Las funciones son **bloques de código reutilizable** que realizan una tarea específica. Se definen con la palabra clave `function`.
+
+### Sintaxis
+
+```js
+function nombreDeLaFuncion(parametro1, parametro2) {
+    // Código a ejecutar
+    // Puedes usar los parámetros aquí
+    return resultado; // Opcional: devuelve un valor
 }
 ```
 
-> **Importante:** Preferir siempre `===` sobre `==` para evitar comparaciones inesperadas por coerción de tipo.  
-> Ejemplo: `"5" == 5` → `true` | `"5" === 5` → `false`
+### Partes de una función
 
----
+| Elemento | Descripción |
+|----------|-------------|
+| `function` | Palabra clave que declara la función |
+| `nombreDeLaFuncion` | Nombre elegido para identificarla |
+| `(parametro1, ...)` | Valores de entrada (opcionales) |
+| `{ ... }` | Cuerpo con las instrucciones a ejecutar |
+| `return` | Devuelve un valor al lugar donde se llamó |
 
-## 6. Funciones
+### Ejemplo: función con parámetro
 
-Una función es un bloque de código reutilizable que recibe parámetros, ejecuta una lógica y puede retornar un valor.
-
-```javascript
-function areaDeUnTriangulo(base = 100, altura = 200) {
-    let area = (base * altura) / 2;
-    return area;
+```js
+function saludar(nombre) {
+    console.log("¡Hola, " + nombre + "!");
 }
 
-console.log(areaDeUnTriangulo(400, 100)); // → 20000
-console.log(areaDeUnTriangulo());          // → 10000  (usa valores por defecto)
+saludar("Juan"); // Imprimirá "¡Hola, Juan!"
 ```
 
-**Conceptos clave:**
-- **Parámetros por defecto** (`base = 100`): se usan si no se pasa un argumento al llamar la función.
-- **`return`**: envía el resultado hacia afuera de la función. Sin él, la función devuelve `undefined`.
+### Ejemplo: función con `return`
 
----
-
-## 7. Ejercicio integrador: Calculadora de Edad
-
-Integra todos los conceptos de la clase: variables, aritmética, comparaciones, operadores lógicos y funciones.
-
-```javascript
-let anioActual     = new Date().getFullYear(); // Año actual dinámico
-let anioNacimiento = 2005;
-let edad           = anioActual - anioNacimiento;
-
-let esMenor      = edad < 18;
-let esMayor      = edad >= 18;
-let esAdultoJoven = esMayor && edad <= 25;
-
-function determinarCategoria(edad) {
-    if (edad < 18)       return "Eres menor de edad";
-    else if (edad <= 25) return "Eres un adulto joven";
-    else                 return "Eres un adulto";
+```js
+function suma(a, b) {
+    let resultado = a + b;
+    return resultado;
 }
 
-console.log("Edad:", edad);
-console.log("¿Es menor?", esMenor);
-console.log("¿Es mayor?", esMayor);
-console.log("¿Es adulto joven?", esAdultoJoven);
-console.log("Categoría:", determinarCategoria(edad));
+let resultadoSuma = suma(5, 3);
+console.log(resultadoSuma); // Imprimirá 8
+```
+
+> Las funciones son útiles para reutilizar código, dividir tareas en partes más pequeñas y facilitar el mantenimiento del programa.
+
+---
+
+## Cierre de la semana
+
+Durante esta semana se aprendió a:
+
+- Agregar JavaScript en una página web, ya sea **incrustado** o **enlazado externamente**.
+- Usar la **consola**, las **alertas** y los **comentarios** para interactuar y documentar el código.
+- Declarar **variables** con `var`, `let` y `const`, comprendiendo sus diferencias de ámbito y mutabilidad.
+- Usar **operadores relacionales** (`==`, `===`, `>`, `<`, etc.) y **lógicos** (`&&`, `||`, `!`).
+- Crear **funciones** con parámetros y devolver valores con `return`.
+
+---
+
+## ¿Cómo usar este material?
+
+### Opción 1: consola del navegador
+1. Abre cualquier página en el navegador.
+2. Presiona `F12` o clic derecho → **Inspeccionar**.
+3. Ve a la pestaña **Console**.
+4. Copia y pega fragmentos de código para revisar los ejemplos.
+
+### Opción 2: vincular `main.js` desde un HTML
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clase 01</title>
+</head>
+<body>
+  <h1>Clase 01 - JavaScript</h1>
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>
 ```
 
 ---
 
-## Resumen de conceptos
+## Archivos incluidos
 
-```
-Salidas básicas    → alert, confirm, prompt, document.write, console.log
-Variables          → let (block scope), var (function scope — evitar), const
-Tipos de datos     → number, string, boolean
-typeof             → identifica el tipo de un valor
-Coerción de tipos  → "texto" + número = concatenación ⚠️
-Conversión         → Number(), parseInt(), parseFloat()
-Comparación        → >, <, >=, <=, == (con coerción), === (estricto), !=
-Lógicos            → && (AND), || (OR), ! (NOT)
-Condicional        → if / else if / else
-Funciones          → parámetros, valores por defecto, return
-```
+- `index.html`: página de apoyo para vincular el script.
+- `assets/js/main.js`: clase completa con ejemplos comentados paso a paso.
 
 ---
 
-## Tarea
+## Referencias
 
-Modificar el ejercicio de la Calculadora de Edad para que el año de nacimiento se capture dinámicamente con `prompt()`. Recordar convertir el valor con `Number()` antes de operar:
-
-```javascript
-let anioNacimiento = Number(prompt("Ingresa tu año de nacimiento:"));
-```
+- MDN Web Docs – [JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript)
+- JavaScript.info – [El Tutorial de JavaScript Moderno](https://es.javascript.info/)
+- W3Schools – [JavaScript Introduction](https://www.w3schools.com/js/js_intro.asp)
+- Flanagan, D. *JavaScript: The Definitive Guide*. O'Reilly Media, Inc.

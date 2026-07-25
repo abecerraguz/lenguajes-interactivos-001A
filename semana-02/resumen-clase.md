@@ -1,85 +1,255 @@
-# Clase 02 - Semana 2
+![Infografía](material-clase/infografia.png)
+# Semana 2 – Profundizando en el control de JavaScript
 
-## Profundizando en el control de JavaScript en el front-end
+> **Carrera:** Desarrollo y Diseño Web | **Asignatura:** Lenguajes Interactivos
+> **Experiencia:** 1 – Semana 2
 
-Este material fue preparado para trabajar en un contexto de **JavaScript en el navegador**, Por eso, los ejemplos del archivo `index.js` están pensados para ser revisados en la **consola del navegador** o vinculados desde un archivo HTML de apoyo.
+---
 
-## Objetivo de la clase
+## Introducción
 
-Durante esta clase se profundiza en el uso de estructuras fundamentales de JavaScript que se ocupan constantemente en el front-end:
+La semana anterior se revisaron las bases de JavaScript: variables, operadores condicionales y funciones. Esta semana se completan los bloques constitutivos del lenguaje explorando el uso de **arreglos (arrays)** y **bucles**, para desarrollar los primeros programas que resuelvan problemas en un contexto real.
 
-- arreglos;
-- objetos;
-- bucles;
-- recorrido de datos;
-- manipulación y organización de información en consola.
+[Descargar presentación](material-clase/presentacion.pdf)
+---
 
-La idea es que el estudiante comprenda cómo almacenar datos, recorrerlos, modificarlos y reutilizar lógica antes de pasar a ejercicios con DOM.
+## Resultado de aprendizaje
 
-## Temas abordados en `index.js`
+**RA1.** Utiliza elementos básicos de programación en JavaScript en sitio web, de acuerdo con los criterios de usabilidad, accesibilidad y requerimientos del proyecto.
 
-### 1. Arreglos (arrays)
-Se explica:
+### Indicadores de logro
 
-- qué es un arreglo;
-- cómo crearlo;
-- cómo acceder a sus elementos por índice;
-- cómo modificar valores;
-- cómo obtener su longitud con `length`.
+| Código | Descripción |
+|--------|-------------|
+| **IL1** | Utiliza correctamente variables, arrays, operadores (`if - else`) y bucles para dar solución a los requerimientos del proyecto. |
+| **IL2** | Utiliza JavaScript para programar funciones que permiten reutilizar código de manera eficiente. |
 
-### 2. Métodos comunes de arreglos
-Se incluyen ejemplos paso a paso con métodos como:
+---
 
-- `push()`
-- `unshift()`
-- `pop()`
-- `shift()`
-- `indexOf()`
-- `splice()`
-- `concat()`
-- `sort()`
-- `reverse()`
-- `split()`
-- `join()`
+## Conceptos relevantes
 
-### 3. Arreglos bidimensionales
-Se trabaja el concepto de arreglos dentro de arreglos para representar estructuras tipo tabla, cuadrícula o matriz.
+| Bucles | Arreglos | Objetos | Eventos | Enumerable |
+|--------|----------|---------|---------|------------|
 
-### 4. Objetos
-Se revisa:
+---
 
-- creación de objetos;
-- propiedades `clave: valor`;
-- acceso con notación de punto;
-- acceso con corchetes;
-- modificación y agregado de nuevas propiedades.
+## Preguntas activadoras
 
-### 5. Bucles
-Se desarrollan ejemplos con:
+- ¿Conoces la ventaja de utilizar **arrays y bucles** en la manipulación de datos de formularios en un sitio web?
+- ¿Sabías que puedes utilizar **bucles y arrays** para simplificar la gestión de contenido dinámico en tu sitio web?
 
-- `for`
-- `while`
-- `do...while`
+---
 
-### 6. Recorrido de arreglos
-Se muestra cómo recorrer arreglos usando índices y bucles para leer cada elemento paso a paso.
+## Arreglos y bucles
 
-### 7. Recorrido de objetos con `for...in`
-Se explica cómo iterar propiedades de un objeto mostrando tanto la clave como el valor.
+Los **arreglos** y los **bucles** son dos conceptos fundamentales en la programación. Ambos desempeñan un papel crucial en la manipulación y organización de datos para crear aplicaciones web interactivas y dinámicas.
 
-### 8. Ejemplo integrador
-Al final se incluye un ejercicio de cierre para reforzar la reutilización de funciones y la aplicación de condicionales, arreglos y recorridos.
+### ¿Por qué usar arreglos y bucles en formularios web?
 
-## ¿Cómo usar este material en front-end?
+| Ventaja | Descripción |
+|---------|-------------|
+| **Gestión de múltiples datos** | Organiza campos con nombres similares (`nombre[]`) de manera eficiente. |
+| **Reducción de código repetitivo** | `for` o `forEach` evitan duplicar lógica al recorrer elementos. |
+| **Automatización de tareas** | Permiten validar, procesar o calcular datos de formularios automáticamente. |
+| **Interacción con el DOM** | Facilitan recorrer y actualizar elementos según los datos ingresados por el usuario. |
+| **Código más legible** | Reflejan la estructura de los datos de forma clara. |
+| **Flexibilidad** | Se adaptan a distintas estructuras de formularios y contextos. |
 
-### Opción 1: usar la consola del navegador
+También son útiles para gestionar datos dinámicos como fotografías en una galería de imágenes o los textos de un carrusel.
+
+---
+
+## Arreglos
+
+Los arreglos son **listas ordenadas** de elementos (números, cadenas, objetos u otros valores) que permiten acceder a ellos por índice y realizar operaciones como agregar, eliminar o modificar elementos.
+
+### Creación
+
+```js
+// Notación de corchetes (recomendada)
+let frutas = ["manzana", "plátano", "naranja"];
+
+// Constructor Array()
+let colores = new Array("rojo", "verde", "azul");
+```
+
+### Acceso y modificación
+
+Los índices comienzan en `0`:
+
+| Posición | 0 | 1 | 2 | 3 |
+|----------|---|---|---|---|
+| Valor | Rojo | Verde | Azul | Amarillo |
+
+```js
+let frutas = ["manzana", "plátano", "naranja"];
+
+let primeraFruta = frutas[0];   // "manzana"
+frutas[1] = "uva";              // cambia "plátano" a "uva"
+frutas.push("pera");            // agrega "pera" al final
+let cantidadDeFrutas = frutas.length; // 3
+```
+
+### Arreglos bidimensionales
+
+```js
+let cuadricula = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+];
+
+// Para acceder al número 5: fila 1, columna 1
+console.log(cuadricula[1][1]); // 5
+```
+
+### Métodos comunes
+
+| Método | Descripción | Sintaxis |
+|--------|-------------|---------|
+| `length` | Largo del arreglo | `arr.length` |
+| `push` | Agrega al final | `arr.push('valor')` |
+| `unshift` | Agrega al principio | `arr.unshift('valor')` |
+| `pop` | Extrae el último elemento | `arr.pop()` |
+| `shift` | Extrae el primer elemento | `arr.shift()` |
+| `indexOf` | Devuelve el índice del elemento | `arr.indexOf('valor')` |
+| `splice` | Elimina un elemento | `arr.splice()` |
+| `concat` | Agrega elementos de otro arreglo al final | `arr.concat(arr2)` |
+| `sort` | Ordena los elementos | `arr.sort()` |
+| `reverse` | Invierte el orden | `arr.reverse()` |
+| `split` | Convierte una cadena en arreglo | `str.split('separador')` |
+| `join` | Une elementos del arreglo en cadena | `arr.join('separador')` |
+
+---
+
+## Objetos
+
+En JavaScript, una estructura con **llave/valor** se llama **objeto**. A diferencia de los arreglos (que usan índices numéricos), los objetos usan **claves (propiedades)** para acceder a sus valores.
+
+### Creación
+
+```js
+var persona = {
+    nombre: "Juan",
+    edad: 30,
+    ciudad: "Santiago"
+};
+```
+
+### Acceso a valores
+
+```js
+console.log(persona.nombre);    // notación de punto → "Juan"
+console.log(persona["edad"]);   // notación de corchetes → 30
+```
+
+### Modificación y nuevas propiedades
+
+```js
+persona.edad = 31;                       // modifica propiedad existente
+persona.profesion = "Desarrollador";     // agrega nueva propiedad
+```
+
+---
+
+## Bucles
+
+Los bucles permiten **ejecutar un bloque de código repetidamente** mientras se cumpla una condición. Son fundamentales para automatizar tareas iterativas.
+
+### Bucle `for`
+
+Se usa cuando se conoce el número de iteraciones.
+
+```js
+for (var i = 0; i < 5; i++) {
+    console.log(i); // imprime del 0 al 4
+}
+```
+
+Partes: **inicialización** → **condición** → **actualización**.
+
+### Bucle `while`
+
+Se usa cuando **no se sabe previamente** cuántas iteraciones se realizarán.
+
+```js
+let contador = 0;
+while (contador < 5) {
+    console.log(contador); // imprime del 0 al 4
+    contador++;
+}
+```
+
+La diferencia con `for`: el incremento ocurre **dentro** del bloque.
+
+### Bucle `do...while`
+
+El bloque de código se ejecuta **al menos una vez** antes de evaluar la condición.
+
+```js
+let contador = 0;
+do {
+    console.log(contador);
+    contador++;
+} while (contador < 5);
+```
+
+> **Nota:** es vital asegurarse de que haya una condición de salida para evitar bucles infinitos.
+
+---
+
+## Recorriendo arrays con bucles
+
+```js
+let frutas = ["manzana", "plátano", "naranja"];
+
+for (var i = 0; i < frutas.length; i++) {
+    console.log(frutas[i]); // imprime cada fruta del arreglo
+}
+```
+
+La condición `i < frutas.length` garantiza que el bucle recorre exactamente todos los elementos, sin importar el tamaño del arreglo.
+
+---
+
+## Recorriendo objetos con `for...in`
+
+El bucle `for...in` itera sobre todas las **propiedades enumerables** de un objeto.
+
+```js
+var persona = {
+    nombre: "Juan",
+    edad: 30,
+    ciudad: "Ejemploville"
+};
+
+for (var propiedad in persona) {
+    console.log(propiedad + ": " + persona[propiedad]); // imprime clave y valor
+}
+```
+
+---
+
+## Cierre de la semana
+
+Durante esta experiencia se aprendió a:
+
+- utilizar **variables y arreglos** para resolver problemas con operaciones numéricas básicas;
+- aplicar **bucles `for` y `while`** para tareas iterativas como recorrer matrices o realizar cálculos repetitivos;
+- usar el bucle **`for...in`** para examinar y trabajar con las claves y valores de un objeto de forma dinámica;
+- programar **funciones reutilizables** integrando condicionales, arreglos y recorridos.
+
+---
+
+## ¿Cómo usar este material?
+
+### Opción 1: consola del navegador
 1. Abre cualquier página en el navegador.
 2. Presiona `F12` o clic derecho → **Inspeccionar**.
 3. Ve a la pestaña **Console**.
-4. Copia y pega fragmentos de `index.js` para ir revisando los ejemplos.
+4. Copia y pega los fragmentos de código para revisar los ejemplos.
 
-### Opción 2: vincular `mainx.js` desde un HTML
-Puedes crear un archivo `index.html` simple como este:
+### Opción 2: vincular `main.js` desde un HTML
 
 ```html
 <!DOCTYPE html>
@@ -96,36 +266,31 @@ Puedes crear un archivo `index.html` simple como este:
 </html>
 ```
 
-Luego:
+Luego abre el archivo en el navegador y revisa la salida de los `console.log()` en la consola.
 
-1. abre ese archivo en el navegador;
-2. abre la consola del navegador;
-3. revisa la salida de los `console.log()` paso a paso.
+---
 
 ## Recomendación didáctica
 
-Una buena forma de trabajar esta clase es:
+1. Explicar qué problema resuelve cada estructura antes de mostrar el código.
+2. Ejecutar el bloque correspondiente y observar la salida en consola.
+3. Modificar valores con los estudiantes y comparar resultados.
+4. Cerrar con el ejemplo integrador (función par/impar + arreglo + bucle).
 
-1. explicar primero qué problema resuelve cada estructura;
-2. ejecutar el bloque correspondiente;
-3. observar la salida en consola;
-4. modificar valores con los estudiantes;
-5. comparar cómo cambia el resultado;
-6. cerrar con el ejemplo integrador.
-
-## Aprendizajes esperados
-
-Al finalizar esta clase, el estudiante debería poder:
-
-- crear y modificar arreglos;
-- aplicar métodos comunes de arrays;
-- construir y recorrer objetos;
-- utilizar bucles para automatizar tareas repetitivas;
-- comprender mejor cómo organizar datos en JavaScript antes de trabajar con el DOM.
+---
 
 ## Archivos incluidos
 
-- `assets/js/main.js`: clase completa con ejemplos explicados paso a paso y comentarios.
-- `README.md`: resumen de contenidos y forma de uso en front-end.
+- `index.html`: página de apoyo para vincular el script.
+- `assets/js/main.js`: clase completa con ejemplos comentados paso a paso.
+
+---
+
+## Referencias
+
+- MDN Web Docs – [JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript)
+- JavaScript.info – [El Tutorial de JavaScript Moderno](https://es.javascript.info/)
+- W3Schools – [JavaScript Introduction](https://www.w3schools.com/js/js_intro.asp)
+- Flanagan, D. *JavaScript: The Definitive Guide*. O'Reilly Media.
 
 
