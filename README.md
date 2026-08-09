@@ -62,7 +62,7 @@ Optimizando la programación de un sitio web
 4. Evaluación Final Transversal
    - [📕 Semana 09 : Examen Transversal — ver resumen de la semana](./semana-09/resumen-clase.md)
       - [🎥 Semana 09 : Descargar video complementario, duración 1 hora 56 min](https://us-lti.bbcollab.com/recording/b3353de7aa4748559cb22d033a043640)
-
+---
 <!--
 
 3. [📕 Clase semana 03 ver lo visto en el video](./semana-03/resumen-clase.md)
@@ -83,6 +83,8 @@ Optimizando la programación de un sitio web
     - [🎥 Ver video clase 09 , duración 1 hora 56 min](https://us-lti.bbcollab.com/recording/b3353de7aa4748559cb22d033a043640)
 
 -->
+
+
 
 
 
