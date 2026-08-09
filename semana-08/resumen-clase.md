@@ -1,7 +1,9 @@
+![Infografía](material-clase/infografia.png)
 # Resumen de Clase — Semana 08
 **Fecha:** 29 de abril de 2026  
 **Tema:** Plugins jQuery — Validación de Formularios, AOS, Owl Carousel 2 y Fancybox
 
+[Descargar presentación](material-clase/presentacion.pdf)
 ---
 
 ## 1. ¿Qué es un Plugin jQuery?

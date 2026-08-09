@@ -5,32 +5,32 @@ Estableciendo las bases para trabajar con JavaScript
 
 | Semana | Actividad | Tipo | Ponderación | Fecha de inicio | Fecha de termino |
 |--------|-----------|----------|----------|----------|----------|
-| 1      | Formativa 1 | Individual | 0% | Martes 11 de Marzo | Lunes 16 de marzo |
-| 2      | Sumativa 1 | Individual | 👉 &#124; 30% | Martes 17 de marzo | Lunes 23 de marzo |
+| 1      | Formativa 1 | Individual | 0% | Martes 11 de agosto | Lunes 17 de agosto |
+| 2      | Sumativa 1 | Individual | 👉 &#124; 30% | Martes 18 de agosto | Lunes 24 de agosto |
 
 ## Experiencia 2
 Aplicando JavaScript para intervenir los elementos del DOM
 
 | Semana | Actividad | Tipo | Ponderación | Fecha de inicio | Fecha de termino |
 |--------|-----------|----------|----------|----------|----------|
-| 3     | Formativa 2 | Individual | 0% | Martes 24 de marzo | Lunes 30 de Marzo |
-| 4     | Formativa 3 | Individual | 0% | Martes 31 de marzo | Lunes 06 de abril |
-| 5     | Formativa 4 | Individual | 0% | Martes 07 de abril| Lunes 13 de abril |
-| 6     | Sumativa 2 | Individual | 👉 &#124; 40% | Martes 14 de abril | Lunes 20 de abril |
+| 3     | Formativa 2 | Individual | 0% | Martes 25 de agosto | Lunes 31 de agosto |
+| 4     | Formativa 3 | Individual | 0% | Martes 01 de septiembre | Lunes 07 de septiembre |
+| 5     | Formativa 4 | Individual | 0% | Martes 08 de septiembre | Lunes 14 de septiembre |
+| 6     | Sumativa 2 | Individual | 👉 &#124; 40% | Martes 15 de septiembre | Lunes 21 de septiembre |
 
 ## Experiencia 3
 Optimizando la programación de un sitio web
 
 | Semana | Actividad | Tipo | Ponderación | Fecha de inicio | Fecha de termino |
 |--------|-----------|----------|----------|----------|----------|
-| 7    | Formativa 5 | Individual | 0% | Martes 21 de abril | Lunes 27 de abril|
-| 8    | Sumativa 3 | Individual o Grupal | 👉 &#124; 30% | Martes 28 de abril | Lunes, 04 de mayo de 2026 |
+| 7    | Formativa 5 | Individual | 0% | Martes 22 de septiembre | Lunes 28 de septiembre |
+| 8    | Sumativa 3 | Individual o Grupal | 👉 &#124; 30% | Martes 29 de septiembre | Lunes 05 de octubre |
 
 
 ## Evaluación Final Transversal
 | Semana | Actividad | Tipo | Ponderación | Fecha de inicio | Fecha de termino |
 |--------|-----------|----------|----------|----------|----------|
-| 9    | Sumativa | Individual | 👉 &#124; 40% | martes, 05 de mayo de 2026 | Domingo, 10 de mayo de 2026 |
+| 9    | Sumativa | Individual | 👉 &#124; 40% | Martes 06 de octubre | Lunes 12 de octubre |
 
 # Lenguajes Interactivos clase a clase
 ## Índice
@@ -51,7 +51,17 @@ Optimizando la programación de un sitio web
    - [📕 Semana 05 : Mejorando la usabilidad del sitio con JS, ver resumen de la semana](./semana-05/resumen-clase.md)
       - [🎥 Semana 05 : Descargar video complementario, duración 1 hora 26 min](https://us-lti.bbcollab.com/recording/8eed0740236a4c3b8f81185e6280886b)
    - [📕 Semana 06 : Modificando el contenido de una página con JS, ver resumen de la semana](./semana-06/resumen-clase.md)
-      - [🎥 Semana 05 : Descargar video complementario, duración 1 hora 11 min](https://drive.google.com/file/d/1y_WaQHAzP2-yM07mSo_MSBVOxxAY8ghM/view?usp=sharing)
+      - [🎥 Semana 06 : Descargar video complementario, duración 1 hora 11 min](https://drive.google.com/file/d/1y_WaQHAzP2-yM07mSo_MSBVOxxAY8ghM/view?usp=sharing)
+
+3. Experiencia de aprendizaje 3: Optimizando la programación de un sitio web
+   - [📕 Semana 07 : Conociendo un framework de JavaScript — jQuery, ver resumen de la semana](./semana-07/resumen-clase.md)
+      - [🎥 Semana 07 : Descargar video complementario, duración 45 min](https://drive.google.com/file/d/1oHoqjKA0FgVZjZcATJlUU4o32RJRSwkC/view)
+   - [📕 Semana 08 : Ahorrando tiempo con librerías de JavaScript, ver resumen de la semana](./semana-08/resumen-clase.md)
+      - [🎥 Semana 08 : Descargar video complementario, duración 1 hora 18 min](https://us-lti.bbcollab.com/recording/924733d41a31412ea52080802f37c2dd)
+
+4. Evaluación Final Transversal
+   - [📕 Semana 09 : Examen Transversal — ver resumen de la semana](./semana-09/resumen-clase.md)
+      - [🎥 Semana 09 : Descargar video complementario, duración 1 hora 56 min](https://us-lti.bbcollab.com/recording/b3353de7aa4748559cb22d033a043640)
 
 <!--
 

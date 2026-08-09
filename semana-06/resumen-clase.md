@@ -1,5 +1,6 @@
+![Infografía](material-clase/infografia.png)
 # Resumen de Clase — Semana 06
-**Fecha:** 15 de abril de 2026  
+
 **Tema:** Creación dinámica de elementos, objetos, arrays y Bootstrap Modal
 
 ---
@@ -12,6 +13,7 @@ Se construyó un **chat de comentarios** donde el usuario puede escribir su nomb
 - **Font Awesome** — íconos en los botones del header.
 - **JavaScript Vanilla** — manejo del DOM, validación, objetos y arrays.
 
+[Descargar presentación](material-clase/presentacion.pdf)
 ---
 
 ## 2. Estructura del HTML

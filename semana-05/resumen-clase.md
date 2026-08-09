@@ -1,3 +1,4 @@
+![Infografía](material-clase/infografia.png)
 # Resumen de Clase — Semana 05
 **Fecha:** 8 de abril de 2026  
 **Tema:** Manipulación del DOM con JavaScript modular (ES Modules)
@@ -8,6 +9,7 @@
 
 El **DOM** (Document Object Model) es la representación en memoria que el navegador construye a partir del HTML. Cada etiqueta se convierte en un **nodo**, formando un árbol que JavaScript puede leer y modificar en tiempo real sin recargar la página.
 
+[Descargar presentación](material-clase/presentacion.pdf)
 ---
 
 ## 2. Arquitectura del proyecto (ES Modules)

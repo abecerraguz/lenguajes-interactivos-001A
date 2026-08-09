@@ -1,9 +1,11 @@
+![Infografía](material-clase/infografia.png)
 # Semana 04 — Manipulación del DOM con JavaScript
 
 ## Objetivo de la clase
 
 Aprender a interactuar con el **Document Object Model (DOM)** desde JavaScript: seleccionar elementos, modificar sus estilos, atributos y contenido de texto, y crear nuevos elementos de forma dinámica respondiendo a eventos del usuario.
 
+[Descargar presentación](material-clase/presentacion.pdf)
 ---
 
 ## ¿Qué es el DOM?

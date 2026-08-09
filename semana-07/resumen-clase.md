@@ -1,7 +1,9 @@
+![Infografía](material-clase/infografia.png)
 # Resumen de Clase — Semana 07
-**Fecha:** 22 de abril de 2026  
+ 
 **Tema:** Integración de jQuery 4.0 — Selectores, Eventos, Efectos y AJAX
 
+[Descargar presentación](material-clase/presentacion.pdf)
 ---
 
 ## 1. ¿Qué es jQuery y por qué usarlo?

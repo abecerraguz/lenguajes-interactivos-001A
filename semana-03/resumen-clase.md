@@ -1,8 +1,10 @@
+![Infografía](material-clase/infografia.png)
 # Clase 03 - Semana 3
 
 ## Interactuando con JavaScript y los navegadores
 
 **Semana 3**, centrando la clase en **BOM (Browser Object Model)** y dejando **DOM** para la **Semana 4**.
+
 
 ## Enfoque de esta clase
 
@@ -23,6 +25,8 @@ En el documento de la semana se trabaja principalmente con objetos y métodos de
 Aunque en el resultado de aprendizaje y en los indicadores se menciona BOM y DOM, el desarrollo real del contenido de la Semana 3 está enfocado principalmente en **BOM**. Por eso, este archivo `index.js` fue dejado con ese alcance.
 
 El ejemplo del reloj que aparece en el PDF utiliza una actualización sobre HTML, pero en esta versión no se desarrolla como contenido central para no adelantar formalmente el tema de DOM.
+
+[Descargar presentación](material-clase/presentacion.pdf)
 
 ---
 
