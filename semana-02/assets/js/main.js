@@ -33,18 +33,23 @@
  * Esto no es obligatorio en JavaScript, pero ayuda mucho en una clase.
  */
 function mostrarTitulo(titulo) {
-  console.log("\n%c============================================================",   "color: aquamarine;font-weight: bold;");
-    console.log(`%c${titulo}`, "color: aquamarine; font-weight: normal;");
-  console.log("%c============================================================", "color: aquamarine;font-weight: bold;" );
+  const linea = "=".repeat(60);
+  console.log("\n%c" + linea, "color: aquamarine;font-weight: bold;");
+  console.log(`%c${titulo}`, "color: aquamarine; font-weight: normal;");
+  console.log("%c" + linea, "color: aquamarine;font-weight: bold;");
 }
-
 /**
  * Muestra un subtítulo para ordenar las ideas dentro de cada bloque.
  */
 function mostrarSubtitulo(subtitulo) {
-    console.log("\n%c============================================================",   "color: yellowgreen;font-weight: bold;");
-    console.log(`%c${subtitulo}`, "color: yellowgreen; font-weight: normal;");
-  console.log("%c============================================================", "color: yellowgreen;font-weight: bold;" );
+  const linea = "=".repeat(60);
+  console.log("\n%c" + linea, "color: yellowgreen;font-weight: bold;");
+  console.log(`%c${subtitulo}`, "color: yellowgreen; font-weight: normal;");
+  console.log("%c" + linea, "color: yellowgreen;font-weight: bold;");
+}
+
+function mostrarMensaje(mensaje) {
+  console.log(`%c${mensaje}`, "color: white; font-weight: normal;");
 }
 
 // ============================================================
