@@ -210,14 +210,17 @@ function destacarImpares(e){
 // Aumenta en 4px el font-size de TODOS los encabezados que tengan la clase "destacado"
 // ─────────────────────────────────────────────────────────────────────────────
 function agrandarEncabezados(e){
+  
     // Previene el comportamiento por defecto del <a>
     e.preventDefault();
-
+  console.log('Mierdaaaaaa 2')
     // Selecciona solo los encabezados que actualmente tienen la clase "destacado"
     const destacados = document.querySelectorAll('.header.destacado');
 
+
+
     // Recorre cada encabezado destacado
-    destacados.forEach(function(element){
+    Array.from(destacados).forEach(function(element){
         // getComputedStyle lee el estilo calculado final del elemento (devuelve "XXpx")
         const tamañoActual = window.getComputedStyle(element).fontSize;
         // parseFloat convierte el string "XXpx" al número XX eliminando la unidad "px"
@@ -236,6 +239,8 @@ function agrandarEncabezados(e){
 function disminuirEncabezados(e){
     // Previene el comportamiento por defecto del <a>
     e.preventDefault();
+
+     console.log('Mierdaaaaaa 2')
 
     // Selecciona solo los encabezados que actualmente tienen la clase "destacado"
     const destacados = document.querySelectorAll('.header.destacado');
