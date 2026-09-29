@@ -30,7 +30,7 @@ Optimizando la programación de un sitio web
 ## Evaluación Final Transversal
 | Semana | Actividad | Tipo | Ponderación | Fecha de inicio | Fecha de termino |
 |--------|-----------|----------|----------|----------|----------|
-| 9    | Sumativa | Individual | 👉 &#124; 40% | Martes 06 de octubre | Lunes 12 de octubre |
+| 9    | Sumativa | Individual | 👉 &#124; 40% | Martes 06 de octubre | Domingo 11 de octubre |
 
 # Lenguajes Interactivos clase a clase
 ## Índice
